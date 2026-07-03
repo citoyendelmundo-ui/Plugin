@@ -1,113 +1,158 @@
 # Fleet (fleetai.com) — Interview Brief: Deployments Generalist
 
-> v1 — built from this session's verified research (two adversarial verification
-> passes; Fleet financial claims confirmed 3–0 by independent skeptics tracing to
-> The Information's primary reporting and Sacra). A live-augmentation pass
-> (founders, role posting, recent news) is running and will update this file.
-> Prepared 2026-07-02 for a second screening interview.
+> v2 — session-verified research (two adversarial verification passes) + live
+> augmentation pass (2026-07-02: founders, role postings, product surface,
+> competitive field). Prepared for a second screening interview.
+> Disambiguation anchors for further research: fleetai.com · LinkedIn `fleet-so`
+> ("Fleet AI, Inc.") · Ashby `jobs.ashbyhq.com/fleetai` · GitHub `fleet-ai` —
+> NOT fleetdm, aifleet, fleet.ai, or "My Fleet AI".
 
 ---
 
-## 1. Company facts (verification status marked)
+## 1. The people
+
+- **Nic (Nicolai) Ouporov — co-founder & CEO.** Previously founding engineer at
+  **Respell** (no-code AI automation, acquired by Salesforce Jan 2024); Columbia
+  CS (reported). Active on X (@nicolas_ouporov).
+- **Andrew Zhou — co-founder.** Previously co-founded **Kona** (AI coach for
+  remote managers, acquired by 15Five); earlier software engineering at **Apple
+  (Final Cut Pro)**.
+- Both founders are second-time founders with acquisition exits — expect a
+  high-agency, ship-fast culture and interviewers who pattern-match for the same.
+- Team pedigree (per fleetai.com/about): ex-Anthropic, xAI, Meta
+  Superintelligence, Essential AI, Contextual AI, Mercor, Docker, Citadel, Jane
+  Street, Cruise. Self-described "engineering-first team of former founders,
+  researchers, and artists." GitHub org bio: *"Trying to be good parents for AI."*
+- Headcount signals conflict: CEO said **">20 FTEs"** (Jan 2026); Crunchbase-derived
+  ~40; StartupHub claims 122 (May 2026, stale-data site — treat skeptically).
+  Asking "what's headcount today and the eng/non-eng split?" is both diligence
+  and genuinely unresolved.
+
+**The CEO's exact public statement** (X, ~Jan 2026, rebutting SemiAnalysis's
+"under 20 employees, 1–3 customers" characterization of env vendors):
+> "At fleet, we are working with the majority of the frontier (which is of course
+> more than 3 customers) and have more than 20 FTEs. Come join us."
+
+## 2. Company facts
 
 | Fact | Detail | Status |
 |---|---|---|
-| Founded | 2024 | ✅ |
-| Business | RL training environments ("RL gyms") for AI labs — replicas of real software (Salesforce, Excel) in which models learn to operate tools | ✅ |
-| Revenue | ~$1M annualized (end 2025) → **$60M+ annualized (Apr 2026)**; Sacra independently concurs (~$63M per ARR Club; ~$160M projected next quarter, weaker source) | ✅ |
-| Funding | Seed at <$100M valuation (Sequoia, Menlo, SV Angel among investors); April 2026 talks for $50M+ at ~$750M post led by Bain Capital Ventures | ✅ |
-| Round close | Reportedly closed at **$45M / $725M led by insiders** (ARR Club — single mid-tier source; no official announcement found) | 📰-weak |
-| Team | **>20 FTEs** — CEO publicly disputed SemiAnalysis's "under 20 employees, 1–3 customers" characterization | 📰 (CEO statement) |
-| Customers | CEO claims **majority of frontier labs**; demand driven by labs "scrambling for high-quality training data" (The Information) | 📰 |
-| Identity | fleetai.com; PitchBook profile 638849-89; distinct from fleetdm (device mgmt) and logistics Fleets | ✅ |
+| Founded | 2024; on-site culture, **SF + New York (Manhattan)** | ✅ |
+| Product | "Training gyms for agents": high-fidelity replicas of enterprise software (Salesforce, Excel, ServiceNow, browsers, IDEs, medical-records systems) + **Harbor**, an agent evaluation/optimization framework (arbitrary agents, shared benchmarks, thousands of parallel experiments, RL rollout generation) | ✅ |
+| Public tech surface | GitHub `fleet-ai`: fleet-sdk (Python), **zeroboot** (sub-millisecond copy-on-write VM sandboxes, Rust), **gym-anything** (convert any software into an agent environment), EnterpriseOps-Gym (ServiceNow), mcp-bench, harbor-train (GRPO training on SkyRL) | ✅ |
+| Business model | **Two layers** (Sacra): (1) bespoke environment builds — dominant early revenue; (2) **recurring platform access** — SDK, versioned environments, managed instances, 60-day free trial, recurring billing | 📰 |
+| Customers | Two archetypes: **frontier labs** (post-training + capability evals; CEO claims "majority of the frontier") and **large enterprises** (bespoke agent environments; early traction in financial services & insurance). No customer publicly named | 📰 |
+| Revenue | ~$1M annualized (end 2025) → **$60M+ annualized (Apr 2026)**, Sacra estimate; run-rate = latest quarter ×4, not TTM. ARR Club: ~$63M, $160M projected next quarter | ✅/📰 |
+| Funding | ~$15M seed (Sequoia, Menlo, SV Angel; BCV per one snippet). Apr 2026: talks for $50M+ at ~$750M post led by Bain Capital Ventures ✅. ARR Club claims closed **$45M Series A at $725M led by insiders** — no official announcement as of Jul 2 | ✅ + 📰-weak |
+| Recent news (May–Jul 2026) | Quiet — no funding-close press, launch, or controversy found. Competitor Patronus raised $50M Series B (Jun 25) | ✅ |
 
-## 2. Market context you should speak fluently
+## 3. The role — what the research found
 
-- **Demand side:** Anthropic leadership discussed **$1B+/yr on RL environments** ✅
-  (The Information, Sep 2025); OpenAI reportedly planned ~$1B on experts/RL envs in
-  2025 → ~$8B by 2030 📰. Patronus raised $50M pivoting *into* environments with
-  15x revenue growth 📰. General Intuition's $2.3B env bet (Jun 2026) 📰.
-- **Unit economics tension:** UI-gym clones reportedly sell ~$20K/site as
-  **one-time purchases** 📰 (SemiAnalysis). The strategic question for every env
-  vendor: converting artifact sales into a recurring platform. Fleet's 60x revenue
-  ramp suggests they've found repeatable demand — ask what the recurring mix is.
-- **Competition:** Mechanize (~$750M reported val, $500K eng salaries, works with
-  Anthropic 📰) at the premium bespoke end; **Prime Intellect's open-source
-  Environments Hub** ("Hugging Face for RL envs") commoditizing from below ✅;
-  Surge/Mercor/Scale pivoting in from data 📰; Patronus converging from evals 📰.
-- **The bear case you should be ready to engage:** OpenAI's Sherwin Wu "short" on
-  RL-env startups; Karpathy "bearish on RL specifically"; reward hacking (Ross
-  Taylor) 📰. Fleet's counter is presumably breadth of lab customers + speed.
-  Being conversant with the bear case — and asking how Fleet answers it — reads
-  as sophistication, not negativity.
+**No posting titled "Deployments Generalist" is publicly indexed.** The closest
+official posting is **"Member of Technical Staff, Deployments"**
+(fleetai.com/careers — URL slug is literally
+`former-founder-with-track-record-and-experience`), SF/NY, on-site, full-time,
+posted Feb 19, 2026. Your title is likely a newer or retitled variant — possibly
+blending MTS-Deployments with the separately-listed **"Operations Generalist"**
+(Paraform). Implications:
 
-## 3. What "Deployments Generalist" likely means (inferred — verify in interview)
+- **Stated responsibilities (MTS Deployments):** collaborate with a fully
+  technical team to deliver RL environments, realistic simulated data,
+  representative tasks, and supporting infrastructure.
+- **Stated profile:** high-agency, deeply technical, work fast, "effectively
+  delegate work to **fleets of coding agents**," deep appreciation for AI
+  research and low-level infra. Target: ex-founders and early-startup engineers.
+- **What "Deployments" means at Fleet** (Sacra): forward-deployed,
+  founder/engineer-led GTM — team members **building custom environments and
+  agents directly inside customer workflows** (labs and enterprises).
+- **Comp:** no published range — "extremely competitive" salary + equity.
+  Benefits: generous equity grants, health/vision/dental, food stipend, gym,
+  unlimited PTO, retirement plan. (Distinct from the contractor "Fleet
+  Fellowship" arm at $40/hr — make sure your process is for the FTE role.)
+- **Other open roles** (what they're scaling): MTS Generalist, MTS Data, MTS
+  Synthetic Data, MTS Research Engineering, Environments Developer SWE,
+  Operations Generalist. Pattern: technical delivery + ops, no classic PM
+  ladder yet — you'd be early shaping that function.
+- **No interview intel exists anywhere** (Glassdoor/Blind/Reddit hits are all
+  unrelated fleet companies) — company is too new. Expect a founder-designed,
+  work-sample-heavy loop; the "generalist" framing + founder profile suggests
+  they'll test agency and building speed over credentials.
 
-Environment vendors sell artifacts that must be **scoped, integrated, calibrated,
-and QA'd per customer**. A deployments generalist is most plausibly Fleet's
-forward-deployed delivery function: owning an environment's journey from lab
-request → spec → build coordination → reward/grading calibration → delivery →
-feedback loop. It's the role where product discovery, program ops, and technical
-judgment meet — which is precisely the profile intersection you bring.
+**Calibration note:** the posting language is more engineering-flavored than a
+classic PM/ops role. Don't oversell process; lead with (a) technical fluency —
+you can talk SDK/environment/reward mechanics credibly, (b) your rubric/eval
+depth, (c) customer-discovery instincts. "Generalist" is the word they chose —
+show range.
 
 ## 4. Your positioning — three angles
 
-**A. Rubric/eval depth is Fleet's core technical bottleneck, and you have it.**
-Environments are only as good as their **reward functions** — the field's known
-failure mode is reward hacking. You have a committed research corpus here:
-rubrics-as-rewards (RaR's Essential/Important/Optional/Pitfall weighting),
-Verifiers' Rubric-as-reward abstraction, HealthBench's physician-validated
-judge–human agreement (F1 = 0.71), and rubric failure modes (coverage gaps,
-conflated dimensions, correlated criteria — RRD). Talk about environment grading
-the way you'd talk about rubric design: decompose the task into verifiable
-criteria, weight them, validate the grader against ground truth, watch for
-hacking. This is likely the single most differentiating thing you can do in the
-interview.
+**A. Rubric/eval depth = environment-grading depth.** Environments are only as
+good as their reward functions; reward hacking is the sector's known failure
+mode and the bear case insiders cite. You can discuss: decomposing tasks into
+verifiable criteria (RaR's Essential/Important/Optional/Pitfall weighting),
+judge validation against human experts (HealthBench's F1=0.71 method), rubric
+failure modes (coverage gaps, conflated dimensions, correlated criteria — RRD).
+Fleet's **Harbor** is an eval framework — connect your rubric fluency to Harbor's
+benchmark/rollout-scoring layer. Almost no generalist candidate will have this.
 
-**B. Customer discovery on lab demand.** Fleet's growth problem at $60M ARR isn't
-building environments — it's knowing *which* environments the labs will want
-next quarter and specing them before competitors. That's B2B discovery work:
-structured customer interviews with researchers, synthesizing recurring needs
-into a roadmap. Your discovery/qualitative-research background maps directly.
+**B. Customer discovery on two very different segments.** Fleet sells to
+frontier labs *and* to enterprises (finserv/insurance bespoke builds). The
+deployments seat sits exactly where discovery happens: extracting what a lab's
+post-training team or an insurer's ops team actually needs an environment to
+capture. Your B2B/D2C discovery + qualitative-research background is the skill
+that scopes environments *right the first time* — the biggest lever on delivery
+margin in a bespoke business.
 
-**C. Program ops at hypergrowth.** $1M → $60M in months with >20 FTEs means
-delivery is likely straining process. Deployments playbooks, QA gates,
-customer-comms cadences — offer the ops maturity without the bureaucracy.
+**C. Program ops at 60x.** $1M → $60M+ annualized in months, with delivery
+running through a forward-deployed model. Offer delivery playbooks, QA gates,
+and cadence — the ops maturity of someone who's run complex client programs,
+without big-company bureaucracy (their slug literally asks for founder-types).
 
-## 5. Questions to ask (calibrated to impress)
+## 5. Questions to ask (updated with live intel)
 
-1. "What fraction of revenue today is recurring platform vs. one-time environment
-   builds, and what's the motion to shift that mix?" *(the artifact-vs-platform
-   question — the one investors ask)*
-2. "How do you validate reward functions against reward hacking before shipping
-   an environment — and who owns that QA today?" *(your rubric expertise, framed
-   as their operational problem)*
-3. "When a lab asks for a new environment class, what's the current path from
-   request to delivered env, and where does it bottleneck?" *(deployments-role
-   scoping; shows you think in delivery systems)*
-4. "How does Fleet think about Prime Intellect's open-source environments hub —
-   commoditization risk, or demand generation for premium bespoke work?"
-5. "What does the deployments team look like in 12 months if the $160M projection
-   holds — and what would the person in this seat own by then?" *(growth-path +
-   confirms the projection diplomatically)*
+1. "Sacra describes revenue as bespoke builds plus recurring platform access —
+   what's the mix today, and how does Harbor change it?" *(shows you did real
+   diligence; the artifact-vs-platform question, now precision-guided)*
+2. "How do you validate environment reward functions against reward hacking
+   before they ship — and does that live with Deployments or Research?" *(your
+   expertise, framed as their org-design question)*
+3. "For the enterprise archetype — finserv and insurance — who inside the
+   customer defines 'the agent did the task correctly,' and how do you capture
+   that as a grading spec?" *(rubric design meets customer discovery; this is
+   the deployments job in one question)*
+4. "You're hiring MTS Deployments, Operations Generalist, and Synthetic Data
+   roles — how do you see the deployments function splitting as you scale past
+   $100M?" *(growth path; signals you read their careers page)*
+5. "The Information reported the round in April — has it closed, and what's the
+   runway plan?" *(fair, non-hostile diligence; the $45M/$725M report is
+   single-source, so let them tell you)*
 
-## 6. Diligence items for YOU (before accepting anything)
+## 6. Diligence items for YOU
 
-- **Confirm the round actually closed** and the terms ($45M/$725M is single-source).
-  Equity priced off $725M post is very different from a still-open round.
-- Ask headcount now vs. 6 months ago, and eng vs. non-eng split — you want
-  evidence the non-eng org is being built deliberately, not as an afterthought.
-- Customer concentration: "majority of frontier labs" is CEO-claimed — ask how
-  revenue splits across the top 3 customers. (There are only ~5–7 possible
-  frontier-lab buyers; a 60%+ single-customer share is the sector's classic
-  failure mode — see Appen/Google ✅.)
-- Comp benchmark: Mechanize pays $500K for env-building engineers 📰; Handshake
-  pays $180–220K for senior PM 📰. A deployments generalist at a $725M company
-  should land meaningfully above the Handshake band once equity is included.
+- **Round close + terms** — equity priced off $725M post vs. an open round is a
+  materially different offer. Single mid-tier source says closed; confirm.
+- **Headcount + eng/non-eng split** — >20 vs ~40 vs 122 is unresolved; also
+  reveals how early you'd be in the non-eng org (likely very).
+- **Customer concentration** — "majority of the frontier" is ~4–6 possible
+  buyers; ask how revenue splits across the top 3 (Appen/Google is the sector's
+  cautionary tale ✅).
+- **Run-rate math** — $60M is latest-quarter ×4, not TTM; growth is real but
+  young. Ask about net revenue retention on platform customers.
+- **Comp anchors:** Mechanize pays $500K for env engineers 📰; Handshake senior
+  PM $180–220K 📰; DeepTune/peers hiring similar roles. "Extremely competitive"
+  + generous equity at a ~$725M company with 60x growth is the equity-upside
+  profile the market analysis ranked highest — negotiate equity hard.
 
-## 7. Known unknowns (live pass in flight)
+## 7. Competitive field — one-paragraph fluency
 
-- Founders' names/backgrounds and the CEO who disputed SemiAnalysis
-- The actual Deployments Generalist posting text, comp range, onsite policy
-- Fleet's other open roles (what functions they're scaling)
-- May–July 2026 news (round confirmation, launches, controversies)
+DeepTune ($43M Series A, a16z, Mar 2026, NYC, ~26 people — nearest direct rival,
+also "gyms" for Slack/Salesforce-style software); Mechanize (SF, ~20 people,
+~$9.1M, working with Anthropic, SWE-task focus, now hiring CoS/ops/GTM);
+Applied Compute (SF, ~$1.3B unicorn, ex-OpenAI — but sells RL to *enterprises*
+like DoorDash/Cognition, not labs); Patronus ($50M Series B Jun 2026, evals →
+"digital world models"); Prime Intellect (open-source Environments Hub —
+commoditization pressure from below); General Intuition ($2.3B, world models
+from gameplay data, NYC); plus seed-stage Habitat/Vmax/Preference
+Model/Veris/Halluminate/Plato. Fleet's differentiation: breadth across the
+frontier labs + enterprise second market + platform layer (SDK/Harbor/zeroboot)
+rather than pure bespoke artifacts.
