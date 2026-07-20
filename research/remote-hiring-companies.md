@@ -8,16 +8,20 @@
 > contractor network, not FTE). Run 2026-07-02. Full data + the No/Maybe tiers:
 > `remote-hiring-companies.csv`.
 >
-> **Confidence:** ✅ verified = policy text read directly (long-tail set);
-> ◽ role-data = inferred from a posted role's work-model (broader/known set) —
-> reliable but verify the specific req.
+> **Confidence:** ✅ live-verified = current posting/careers page checked directly
+> (2026-07-02); ✅ verified = policy text read directly (long-tail set); ◽ role-data
+> = inferred from a posted role's work-model (broader/known set) — verify the req.
 >
-> **Tally across 97:** **34 hire remote FTEs** · 8 maybe (verify) · 19 hybrid-lean
-> · 34 onsite/hybrid-only · 2 unknown.
+> **Update (2026-07-02):** the 8 previously-ambiguous companies were live-verified
+> and resolved — **Augment, Ema, Tessera Labs, Pallet → Yes**; **FERMÀT, Prosper
+> AI, Profound, Paradigm → No**. The "Maybe (verify)" tier is now empty.
+>
+> **Tally across 97:** **38 hire remote FTEs** · 0 maybe · 19 hybrid-lean ·
+> 38 onsite/hybrid-only · 2 unknown.
 
 ---
 
-## ✅ Hire remote full-time employees (34)
+## ✅ Hire remote full-time employees (38)
 
 | Company | Remote role(s) — example | # rem | Size | Source | Set |
 |---|---|---|---|---|---|
@@ -26,6 +30,7 @@
 | **Arize AI** | Forward Deployed Engineer, US | 2 | — | ◽ role-data | broader/known |
 | **Ascertain** | Forward Deployed Engineer | 1 | ~28 | ✅ verified | long-tail |
 | **Auctor** | Deployment Strategist | 0 | ~25 | ✅ verified | long-tail |
+| **Augment** | Product Manager (Remote) | 1 | — | ✅ live-verified | long-tail |
 | **Braintrust** | Customer Solutions Architect | 2 | — | ◽ role-data | broader/known |
 | **Caylent** | Agentic Architect | 1 | ~897 ⚠️>500 | ✅ verified | long-tail |
 | **Comet** | Product Manager - Opik | 1 | — | ◽ role-data | broader/known |
@@ -33,24 +38,27 @@
 | **Crew AI** | AI Deployment Engineer | 2 | — | ✅ verified | long-tail |
 | **Dealops** | Forward Deployed Strategist | 0 | ~17 | ✅ verified | long-tail |
 | **Decagon** | Strategic Solutions Engineer, West | 1 | — | ◽ role-data | broader/known |
+| **Ema** | Solutions Architect, NA (Remote US) | 1 | ~180 | ✅ live-verified | long-tail |
 | **EvenUp** | AI Product Manager | 6 | ~835 ⚠️>500 | ✅ verified | long-tail |
 | **Forerunner** | Deployment Strategist | 0 | ~80 | ✅ verified | long-tail |
 | **Forge** | Forward Deployed Strategist | 0 | — | ✅ verified | long-tail |
 | **Glean** | Forward Deployed Product Manager | 1 | — | ◽ role-data | broader/known |
 | **HappyRobot** | Deployment Strategist | 0 | ~152 | ✅ verified | long-tail |
-| **Hightouch** | Lead Product Manager, Agentic Personalization | 2 | — | ◽ role-data | broader/known |
+| **Hightouch** | Lead Product Manager, Agentic Personalizati… | 2 | — | ◽ role-data | broader/known |
 | **HumanSignal** | Strategic Projects Lead | 1 | — | ◽ role-data | broader/known |
 | **Invisible Technologies** | Senior Product Manager, Marketplace | 1 | — | ◽ role-data | broader/known |
 | **Lorikeet** | Forward Deployed Product Manager | 0 | ~89 | ✅ verified | long-tail |
 | **Observe.AI** | Implementation Manager | 2 | — | ◽ role-data | broader/known |
 | **Onebrief** | Staff Product Manager, Applied AI | 0 | ~345 | ✅ verified | long-tail |
 | **OpenEvidence** | Senior PM - Consumer AI | 1 | ~130 | ✅ verified | long-tail |
-| **Redox** | Senior Product Manager II – AI Platform & Age… | 1 | ~190 | ✅ verified | long-tail |
+| **Pallet** *(select roles only; fit-role onsite)* | Enterprise Sales Engineer (Remote) | 1 | ~80 | ✅ live-verified | long-tail |
+| **Redox** | Senior Product Manager II – AI Platform & A… | 1 | ~190 | ✅ verified | long-tail |
 | **Runlayer** | Founding Product Manager | 0 | ~20 | ✅ verified | long-tail |
 | **Sema4.ai** | AI Agent Solution Engineer | 3 | ~60 | ✅ verified | long-tail |
 | **Siena AI** | Forward Deployed Product Manager, Agents | 0 | ~45 | ✅ verified | long-tail |
 | **Surge AI** | Forward Deployed Researcher | 5 | — | ◽ role-data | broader/known |
 | **Tailor** | Forward-Deployed Product Manager (FDPM) | 1 | ~50 | ✅ verified | long-tail |
+| **Tessera Labs** | Forward-Deployed Engineer, Pre-Sales (US Re… | 1 | ~55 | ✅ live-verified | long-tail |
 | **Tribe AI** | Delivery Lead (Project/Program) | 4 | ~90 | ✅ verified | long-tail |
 | **Turing** | Delivery Manager - Machine Learning - US | 3 | — | ◽ role-data | broader/known |
 | **Writer** | AI Deployment Engineer (East) | 1 | — | ◽ role-data | broader/known |
@@ -67,15 +75,17 @@
 
 ---
 
-## 🟡 Maybe — remote-friendly but confirm the specific req (8, all long-tail, verified)
+## 🟢 Previously ambiguous — now live-verified (resolved 2026-07-02)
 
-**FERMÀT** (FDPM listed multiple/**hybrid**) · **Pallet** (conflicting: task says
-remote, GC board shows NYC 5-days/week) · **Prosper AI** (policy unpublished,
-likely NYC) · **Profound** (remote "role-dependent," not confirmed for the PM) ·
-**Ema** (hires some remote, but the *named* PM/Solutions roles are SF-onsite) ·
-**Tessera Labs** (PM listed NYC; remote likely, unconfirmed) · **Paradigm** (tiny
-SF in-person team; remote maybe negotiable) · **Augment** (mostly in-office
-SF/Chicago/Toronto; a few roles posted remote)
+- **Augment → Yes** — the target *Product Manager* posting is explicitly **Remote** ($174–220k); Voice PM and Sr AE also remote. Best of the eight.
+- **Ema → Yes** — *Solutions Architect / Forward-Deployed SA (North America)* is **Remote (US)** and is itself a fit-relevant forward-deployed role; the PM role is hybrid (SF 3 days/wk).
+- **Tessera Labs → Yes** — *Forward-Deployed Engineer (Pre-Sales)* is **US-Remote**; the target PM is hybrid (San Jose HQ / NYC / SF).
+- **Pallet → Yes\*** — hires remote FTE for **select roles only** (e.g. *Enterprise Sales Engineer, Remote*); the fit-relevant *Deployment Strategist* is **onsite** NYC/SF 5 days/wk. Remote, but not for your target family.
+- **FERMÀT → No** — FDPM is SF onsite; SF/NYC/Bangalore office-hub, no remote FTE role found.
+- **Prosper AI → No** — AI PM is onsite in NY or Barcelona.
+- **Profound → No** — all PM roles on-site NYC (Union Square).
+- **Paradigm → No** — 5 days/week in-person in SF; all roles onsite.
+
 
 ## 🟠 Hybrid-lean — remote possible but roles skew hybrid (19)
 
@@ -85,17 +95,18 @@ QuantumBlack · Notion · OpenAI · Ramp · Snorkel AI · Synthesia · Vanta
 *(These large/known employers run hybrid cultures; remote FTE roles exist
 episodically — check their boards directly.)*
 
-## ⛔ Onsite / hybrid-only for the roles found (34)
+## ⛔ Onsite / hybrid-only for the roles found (38)
 
 Abridge · AfterQuery · Amigo · Axion · Bespoke Labs · cBEYONData/SMX · Context ·
-Datacurve · David AI · EliseAI · Factory.ai · Fractional AI · Google DeepMind ·
-Halluminate · Handshake AI · Harvey · Hebbia · LMArena (Arena) · Lyzr · Mechanize ·
-Mercor · Mistral AI · Northslope Technologies · Palantir · Patronus AI · Percepta ·
-Peregrine Technologies · Perplexity · Prime Intellect · Retool · Scale AI · Sierra ·
-Vals AI · xAI
-*(Mostly the SF/NY-onsite agent labs and data companies; the long-tail members
-here — AfterQuery, Amigo, Axion, Context, David AI, Factory.ai, Fractional AI,
-Northslope, Percepta, Peregrine — were hand-verified onsite for their open roles.)*
+Datacurve · David AI · EliseAI · Factory.ai · **FERMÀT** · Fractional AI · Google
+DeepMind · Halluminate · Handshake AI · Harvey · Hebbia · LMArena (Arena) · Lyzr ·
+Mechanize · Mercor · Mistral AI · Northslope Technologies · Palantir · **Paradigm** ·
+Patronus AI · Percepta · Peregrine Technologies · Perplexity · Prime Intellect ·
+**Profound** · **Prosper AI** · Retool · Scale AI · Sierra · Vals AI · xAI
+*(Bold = live-verified onsite in this pass. Mostly the SF/NY-onsite agent labs and
+data companies; the long-tail members — AfterQuery, Amigo, Axion, Context, David
+AI, Factory.ai, FERMÀT, Fractional AI, Northslope, Paradigm, Percepta, Peregrine,
+Profound, Prosper AI — were hand- or live-verified onsite for their open roles.)*
 
 ## ❔ Unknown (2)
 
