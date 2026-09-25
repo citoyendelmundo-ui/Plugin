@@ -101,13 +101,14 @@ Calibration session 1: 2026-09-25, forced-choice plus multi-select, answered by 
 | USR-HIK-TASTE-003 | **Flow and momentum, with dwell stops.** Keeps a rhythm and covers ground, but stops at length at payoffs such as overlooks and water. | HIGH | Patapsco "flow / momentum"; pace style | Prefer routes with continuous walkable stretches punctuated by real payoff points. Budget dwell time in duration estimates, roughly +15–25%, to be calibrated. |
 | USR-HIK-TASTE-004 | **Water is a strong positive:** lakeshore/dunes, rivers/gorges, water along the route. | HIGH | Landscape picks; Patapsco "river / water"; loved the Pine Barrens (cedar-water rivers) | Water adjacency is a major value driver. |
 | USR-HIK-TASTE-005 | **Hike-plus-swim in summer.** Summer is appealing specifically as morning or evening hikes with swimming access. | HIGH | Stated in his own words | In summer, favor early or late windows and routes that end at, or pass, a legal swimming spot. Swimming stays under its own lane's gates: designated or guarded swimming is Live, unguarded open water is Inventory-only. |
-| USR-HIK-TASTE-006 | **Views and elevated vantage are positive.** | MED-HIGH | Picked "bluffs / ridges / views"; open-sky driver | Overlooks and bluff edges add value. Exposure still follows the terrain matrix. |
+| USR-HIK-TASTE-006 | **Views and elevated vantage are a top driver.** Claremont's views are the most inspiring of his loved places. | HIGH | Picked "bluffs / ridges / views"; open-sky driver; Claremont > Fells on inspiration | Overlooks and bluff edges add value. Exposure still follows the terrain matrix. |
 | USR-HIK-TASTE-007 | **Seasons:** spring, fall, and winter are all welcome. Summer only in the swim-access form (TASTE-005). | HIGH | Season picks | Winter hiking is a desired lane, but snow and ice remain Controlled progression under §3.3. |
 | USR-HIK-TASTE-008 | **Vetoes** (taste, not safety): road/traffic noise; crowds and bottlenecks; bugs, heat, and mud. | HIGH | Veto list | A route materially exposed to a veto drops ≥1 value tier and must be disclosed. Readiness is unchanged. Mud-heavy routes appear only when the mode is explicitly a wet-footing progression. Watch bug season (spring/summer wetlands and woods) and heat. |
 | USR-HIK-TASTE-009 | **Crowd rule:** busy iconic trails are acceptable only when the payoff is truly exceptional. Crowding and bottlenecks otherwise lower value. | HIGH | "Depends on the payoff" plus the veto | For iconic places, recommend off-peak windows (weekday, early start, shoulder season) and quieter alternative approaches. |
 | USR-HIK-TASTE-010 | **Company is neutral.** Solo or together, no standing preference. | HIGH | Stated | No value adjustment. Companion disposition stays a safety output only. |
 | USR-HIK-TASTE-011 | **Route shape doesn't matter;** terrain does. | HIGH | Stated | Pick loop, out-and-back, or point-to-point by payoff, logistics, and bailout. |
-| USR-HIK-TASTE-012 | **Loved places (reference anchors):** Pine Barrens (Wharton SF), and Middlesex Fells and/or Claremont Canyon. Not selected: Wissahickon, Dolly Sods/Canaan (not hiked, or not loved; unknown which). | MED | Past-places pick | Use these for "same feeling as X" matching. Pine Barrens is flat, sandy, and remote-feeling with dark-water rivers, which shows that *remote feel plus water* can deliver without elevation. |
+| USR-HIK-TASTE-012 | **Loved-place anchors:** Middlesex Fells *and* Claremont Canyon are both loved. Claremont's **views are the more inspiring**, and the Fells' **water and forest** are a close second. Pine Barrens (Wharton SF) is also loved. Dolly Sods: **never hiked**. Wissahickon: not selected (unknown whether hiked). | HIGH | Session 1 plus follow-up 2026-09-25 | For "same feeling as X" matching: Claremont ≈ ridge/canyon-edge views over a city or bay; Fells ≈ rocky wooded hills with reservoirs and ponds; Pine Barrens ≈ remote-feeling flat pine with dark-water rivers. When views and water/forest compete, views edge ahead. |
+| USR-HIK-TASTE-013 | **History and culture add value situationally.** A supporting factor, not a driver. | MED | Stated 2026-09-25 | +½ tier when the historic or cultural feature is integrated into the route and legible (CCC stonework, Indigenous mounds, lighthouse, preserved homestead). No penalty when absent. |
 
 ### 4.2 Demoted or weakened hypotheses
 
@@ -128,18 +129,18 @@ For a route that passes the gates, start at **Worthwhile**. Then:
   - openness/remoteness (TASTE-001)
   - water adjacency or swim access in season (TASTE-004/005)
   - a meaningful, well-designed progression dimension (TASTE-002)
+- **+1 tier** for strong views from an elevated vantage (TASTE-006)
 - **+½ tier** for:
-  - views/bluffs (TASTE-006)
+  - legible history/culture (TASTE-013)
   - good flow terrain with payoff stops (TASTE-003)
 - **−1 tier** for each material veto exposure (TASTE-008), or unavoidable crowding without an exceptional payoff (TASTE-009).
-- **Cap at Strong** unless at least two major drivers hit. **Exceptional** needs openness/remoteness *and* water, or either one *plus* a rare-timing window.
+- **Cap at Strong** unless at least two major drivers hit. **Exceptional** needs two of {openness/remoteness, views, water} or one of them *plus* a rare-timing window.
 - Always name which records drove the tier.
 
 ### 4.4 Remaining UNKNOWNs (next calibration targets)
-- Whether it was Fells or Claremont (or both) that he loved, and why. What made Wissahickon not qualify (not hiked, or hiked and meh)?
-- Whether Dolly Sods has been hiked. If yes and not loved, that directly tests TASTE-001.
+- Wissahickon: not hiked, or hiked and meh?
+- TASTE-001 rests on a forced choice, not experience (Dolly Sods never hiked). The first real open/remote outing is its disconfirmation test.
 - How much restorative/immersive and wonder/awe matter
-- How much cultural or historic features add
 - Heat threshold (what temperature or humidity turns a summer hike into a veto)
 - Tolerance for trail-side infrastructure short of road noise (rail trails, visible buildings)
 
