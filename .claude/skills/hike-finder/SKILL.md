@@ -24,7 +24,7 @@ Identity → legal access → safety → evidence → capability & equipment →
 
 ### 4. Assess personal value separately
 - Score with the §4.3 heuristic using the accepted USR-HIK-TASTE records. Say which records drove the tier.
-- Main drivers: openness/remoteness, water (and hike+swim in summer), and well-designed progression. Vetoes: road noise, crowds/bottlenecks, bugs/heat/mud.
+- Main drivers: openness/remoteness, **earned views** (a climb that ends at a big view; drive-up views count half), water (and hike+swim in summer), and well-designed progression. Vetoes: road noise, crowds/bottlenecks, bugs/heat/mud.
 - Give personal-fit confidence. It's Medium after one calibration session; raise it as rated outings accumulate.
 - For "same feeling as X" requests, use the loved-place anchors in TASTE-012.
 
@@ -35,6 +35,8 @@ Fill three to five roles that apply: **Best overall · Best progression · Best 
 - **Why it fits** (which TASTE records) · **why not** (dominant risk or uncertainty) · progression dimension if any
 - Terrain axes outside Routine, companion disposition, gear callouts (only material ones), turnaround trigger, bailout
 - Last-verified date for conditions and access, with a pre-departure recheck note
+
+For Strong+ picks more than ~2 h away, add an **overnight variant** (TASTE-014): weekday, climbing split across two days, golden-hour or sunrise views on maintained trail, lodging existence only, and Day 2 gated on a next-morning symptom check with a low-load alternative.
 
 Also include a short **"excluded and why"** list for well-known places you dropped: closure, envelope, a stacked progression, or crowding.
 

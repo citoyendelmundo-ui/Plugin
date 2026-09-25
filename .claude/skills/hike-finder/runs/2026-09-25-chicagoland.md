@@ -167,3 +167,40 @@ Log body response (pre, during, immediately after, same evening, next day) **sep
 - Starved Rock: [IDNR trail improvement project](https://dnr.illinois.gov/closures/starved-rock-trail-improvement.html), [Hoodline](https://hoodline.com/2026/03/starved-rock-trails-ripped-up-in-18-million-spring-makeover/), [Shaw Local](https://www.shawlocal.com/illinois-valley/2026/03/28/starved-rock-state-park-closes-french-canyon-trail-through-june-for-improvements/)
 - Devil's Lake: [WI DNR hiking](https://dnr.wisconsin.gov/topic/parks/devilslake/recreation/hiking), [Current conditions](https://devilslakewisconsin.com/plan/current-conditions/), [Fall colors 2026](https://devilslakewisconsin.com/2026/09/08/think-fall/), [2026 color forecast](https://devilslakewisconsin.com/2026/09/22/what-will-wisconsins-fall-colors-look-like-in-2026/), [Travel Wisconsin Fall Color Report](https://www.travelwisconsin.com/fall-color-report?type=fallcolor), [WI peak by county](https://morethanjustparks.com/foliage-tracker/wisconsin)
 - Hunting: [WI 2026 season sheet](https://gowildagent.wi.gov/Documents/Season%20Sheet.pdf), [Indiana 2026](https://www.trailprointel.com/blog/indiana-deer-season-2026-27), [Illinois 2026](https://www.trailprointel.com/blog/illinois-deer-season-2026-27), [IDNR deer firearm](https://dnr.illinois.gov/hunting/deerfirearmmuzzleloader.html)
+
+---
+
+## ADDENDUM (2026-09-25, later): re-ranked after new taste inputs
+New records:
+- **Weekday available** and **inclined to overnight near a great hike** (TASTE-014).
+- **Claremont = earning the view with the climb** (TASTE-006 revised). Earned views now get +1; views without a climb get +½.
+
+### What changed in the ranking
+1. **Devil's Lake is now the clear season headliner, on a weekday, as an overnight.** Its bluff stairs *are* the approach to the view, so the earned view is the core of the route. Value: **Exceptional**. The weekday removes the crowd veto.
+2. **Mississippi Palisades drops a notch** (Strong). Its best overlooks can be reached by car, so the views are less earned.
+3. **Indiana Dunes' 3 Dune Challenge rises.** The Mt. Tom summit view is earned by steep sand climbing.
+4. **Saugatuck + Hoffmaster becomes a Michigan overnight option** (details below).
+
+### Devil's Lake overnight, recommended structure (weekday, Oct 5–18; commit off Thursday color reports)
+- **Day 1 (afternoon arrival, ~3 h drive):**
+  - East Bluff via East Bluff Woods, then Devil's Doorway and the east bluff-top overlooks.
+  - Time the bluff top for **late-afternoon or sunset light**. Headlamp owned; descend on the maintained trail before full dark.
+  - Earned view; ~3 mi; roughly half the park's total climbing.
+- **Overnight:** Devil's Lake SP campground (open through October; showers until about mid-month) or Baraboo lodging. Feasibility only; not sourced in detail.
+- **Day 2 (morning), gated on a next-morning symptom check:**
+  - **Clean** → West Bluff Trail up the stone steps to the west bluff overlooks, early, when the lake is still and the trail empty. Earned view #2.
+  - **Hip talking** → Tumbled Rocks Trail: flat, along the lake at the base of the West Bluff, with talus and lake views. Its pavement is rough, so watch footing.
+- **Why split beats one big day:**
+  - Each day's gain stays near the routine envelope (~800 ft) instead of 1,000–1,200 ft in one push.
+  - The single progression dimension becomes **back-to-back days of climbing**, which is Untested, and it has a built-in Day 2 downgrade.
+  - You get two light windows (sunset and early morning) at the park's best viewpoints, with no crowds.
+- **Readiness:** Conditional (fresh body check Day 1; symptom check Day 2). No scrambles (CCC, Balanced Rock, Potholes). Poles Recommended.
+- **Value:** Exceptional (provisional). Drivers: earned views (TASTE-006), lake (TASTE-004), peak-color rare window, progression (TASTE-002), CCC history (TASTE-013). No crowd veto on a weekday.
+- **Confidence:** operational Medium; fit **High** (all three main drivers plus Claremont-shaped).
+- **Log:** full symptom phases for both days, plus next-day recovery after Day 2. This is valuable multi-day calibration evidence.
+
+### Michigan overnight option: Saugatuck Dunes + P.J. Hoffmaster (early-mid October weekday, or before the Nov 15 firearm opener)
+- **Day 1:** Saugatuck Dunes South + North trails + beach (~7–8 mi, loose sand; progression dimension = sand).
+- **Day 2** (~40 min north), gated on symptom check: Hoffmaster Dune Climb Stairway (~220 steps to a Lake Michigan panorama; an earned view in a short dose), plus the forested dune trails and beach.
+- **Access flag:** the Dune Overlook Trail and stairway were **closed for construction in summer 2025**, and 2026 status wasn't verified. Treat it as **Unknown/Hold on access** until confirmed on the Michigan DNR park page.
+- **Value:** Strong→Exceptional (openness + water + earned view). Confidence: operational Low-Medium (Hoffmaster access unverified); fit Medium-High.

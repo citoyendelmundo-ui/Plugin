@@ -34,7 +34,7 @@ Confidence labels: **HIGH** = stated and accepted by Aaron · **MED** = he desig
 - **Default origin:** Bryn Mawr Red Line station, Edgewater, Chicago. For another geography, ask for or assume a stated origin and say which one you used.
 - **Envelope:** one-way travel soft cap of 3 h. Exceptional opportunities may stretch to 4 h. Anything farther needs explicit expansion.
 - **Mobility:** a car (Toyota Corolla) is usually available. Always also evaluate CTA, Pace, Metra, train+bike, and other credible multimodal options, which may be *prioritized*. MED inference: a good car-free route adds value.
-- **Trip shape:** day trip by default. Note when an overnight is feasible (lodging infrastructure exists) but don't source lodging.
+- **Trip shape:** day trip by default. Aaron is inclined to stay overnight near a great hike, and weekdays work (TASTE-014). Offer overnight variants for strong far picks. Note that lodging exists (lodging infrastructure) but don't source it in detail.
 - Travel envelopes depend on origin and departure time. Use real door-to-door time, not radius.
 
 ## 3. Capability, body, equipment, safety (HIGH, spec §8.1–8.3)
@@ -101,7 +101,7 @@ Calibration session 1: 2026-09-25, forced-choice plus multi-select, answered by 
 | USR-HIK-TASTE-003 | **Flow and momentum, with dwell stops.** Keeps a rhythm and covers ground, but stops at length at payoffs such as overlooks and water. | HIGH | Patapsco "flow / momentum"; pace style | Prefer routes with continuous walkable stretches punctuated by real payoff points. Budget dwell time in duration estimates, roughly +15–25%, to be calibrated. |
 | USR-HIK-TASTE-004 | **Water is a strong positive:** lakeshore/dunes, rivers/gorges, water along the route. | HIGH | Landscape picks; Patapsco "river / water"; loved the Pine Barrens (cedar-water rivers) | Water adjacency is a major value driver. |
 | USR-HIK-TASTE-005 | **Hike-plus-swim in summer.** Summer is appealing specifically as morning or evening hikes with swimming access. | HIGH | Stated in his own words | In summer, favor early or late windows and routes that end at, or pass, a legal swimming spot. Swimming stays under its own lane's gates: designated or guarded swimming is Live, unguarded open water is Inventory-only. |
-| USR-HIK-TASTE-006 | **Views and elevated vantage are a top driver.** Claremont's views are the most inspiring of his loved places. | HIGH | Picked "bluffs / ridges / views"; open-sky driver; Claremont > Fells on inspiration | Overlooks and bluff edges add value. Exposure still follows the terrain matrix. |
+| USR-HIK-TASTE-006 | **Earned views are a top driver.** A view is most inspiring when you *earn it with the climb*: Claremont inspires because of the ascent to the view, not the view alone. Drive-up or flat-approach overlooks count for less. | HIGH | Bluffs/views pick; Claremont > Fells on inspiration; follow-up 2026-09-25: "earning the view with the climb" | Views and progression are coupled: a sustained climb that ends at a big view is the highest-value shape. Earned view = +1; view without a meaningful climb = +½. Favor routes where the climb *is* the approach to the payoff. |
 | USR-HIK-TASTE-007 | **Seasons:** spring, fall, and winter are all welcome. Summer only in the swim-access form (TASTE-005). | HIGH | Season picks | Winter hiking is a desired lane, but snow and ice remain Controlled progression under §3.3. |
 | USR-HIK-TASTE-008 | **Vetoes** (taste, not safety): road/traffic noise; crowds and bottlenecks; bugs, heat, and mud. | HIGH | Veto list | A route materially exposed to a veto drops ≥1 value tier and must be disclosed. Readiness is unchanged. Mud-heavy routes appear only when the mode is explicitly a wet-footing progression. Watch bug season (spring/summer wetlands and woods) and heat. |
 | USR-HIK-TASTE-009 | **Crowd rule:** busy iconic trails are acceptable only when the payoff is truly exceptional. Crowding and bottlenecks otherwise lower value. | HIGH | "Depends on the payoff" plus the veto | For iconic places, recommend off-peak windows (weekday, early start, shoulder season) and quieter alternative approaches. |
@@ -109,6 +109,7 @@ Calibration session 1: 2026-09-25, forced-choice plus multi-select, answered by 
 | USR-HIK-TASTE-011 | **Route shape doesn't matter;** terrain does. | HIGH | Stated | Pick loop, out-and-back, or point-to-point by payoff, logistics, and bailout. |
 | USR-HIK-TASTE-012 | **Loved-place anchors:** Middlesex Fells *and* Claremont Canyon are both loved. Claremont's **views are the more inspiring**, and the Fells' **water and forest** are a close second. Pine Barrens (Wharton SF) is also loved. Dolly Sods: **never hiked**. Wissahickon: not selected (unknown whether hiked). | HIGH | Session 1 plus follow-up 2026-09-25 | For "same feeling as X" matching: Claremont ≈ ridge/canyon-edge views over a city or bay; Fells ≈ rocky wooded hills with reservoirs and ponds; Pine Barrens ≈ remote-feeling flat pine with dark-water rivers. When views and water/forest compete, views edge ahead. |
 | USR-HIK-TASTE-013 | **History and culture add value situationally.** A supporting factor, not a driver. | MED | Stated 2026-09-25 | +½ tier when the historic or cultural feature is integrated into the route and legible (CCC stonework, Indigenous mounds, lighthouse, preserved homestead). No penalty when absent. |
+| USR-HIK-TASTE-014 | **Inclined to stay overnight near a great hike**, and weekdays are available. | HIGH | Stated 2026-09-25 | For Strong+ opportunities more than ~2 h away, surface an overnight variant: a two-day pairing, sunrise/sunset views, weekday timing to dodge crowds. Show that lodging exists but don't source it in detail (spec v0.1 scope). The 3 h / 4 h travel caps are unchanged; going farther still needs explicit expansion. Day 2 of any pairing is gated on a next-morning symptom check, because back-to-back days of load are Untested. |
 
 ### 4.2 Demoted or weakened hypotheses
 
@@ -129,7 +130,7 @@ For a route that passes the gates, start at **Worthwhile**. Then:
   - openness/remoteness (TASTE-001)
   - water adjacency or swim access in season (TASTE-004/005)
   - a meaningful, well-designed progression dimension (TASTE-002)
-- **+1 tier** for strong views from an elevated vantage (TASTE-006)
+- **+1 tier** for an *earned* view: a big view at the end of a meaningful climb (TASTE-006). A view without the climb gets +½.
 - **+½ tier** for:
   - legible history/culture (TASTE-013)
   - good flow terrain with payoff stops (TASTE-003)
