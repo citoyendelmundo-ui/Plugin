@@ -29,10 +29,10 @@ Identity → legal access → safety → evidence → capability & equipment →
 - For "same feeling as X" requests, use the loved-place anchors in TASTE-012.
 
 ### 5. Deliver a small portfolio, not a list
-Fill three to five roles that apply: **Best overall · Best progression · Best low-friction (transit-friendly) · Best restorative/immersive · Rare-condition window**. For each:
+Fill three to five roles that apply: **Best overall · Best progression · Best low-friction (transit-friendly, tiebreaker role) · Best hike+swim (summer) · Best restorative/immersive · Rare-condition window**. For each:
 - Route, place, best window, door-to-door time (car and transit)
 - Readiness · value tier (provisional) · confidence (operational / fit)
-- **Why it fits** (which delight hypotheses) · **why not** (dominant risk or uncertainty) · progression dimension if any
+- **Why it fits** (which TASTE records) · **why not** (dominant risk or uncertainty) · progression dimension if any
 - Terrain axes outside Routine, companion disposition, gear callouts (only material ones), turnaround trigger, bailout
 - Last-verified date for conditions and access, with a pre-departure recheck note
 
