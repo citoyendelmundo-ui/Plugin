@@ -1,6 +1,6 @@
 # Aaron — Hiking & Outdoor Delight Profile (source of truth)
 
-Version 0.1 · 2026-09-25 · Status: capability layer **accepted**, taste layer **hypothesis — not yet elicited**
+Version 0.2 · 2026-09-25 · Status: capability layer **accepted**; taste layer **calibrated (session 1)**
 
 ## 0. Provenance and authority
 
@@ -13,7 +13,7 @@ Version 0.1 · 2026-09-25 · Status: capability layer **accepted**, taste layer 
 
 Confidence labels: **HIGH** = stated and accepted by Aaron · **MED** = he designed the system to track this, but gave no weight · **LOW** = inferred from behavior or a co-authored source · **UNKNOWN** = calibration target. Don't fill it with a default (spec FR-AIP-002).
 
-**Key finding:** the spec deliberately deferred hiking taste (AIP-09). Almost everything below about *delight* is inference. Treat §4 as hypotheses to disconfirm, not as preferences.
+**Taste layer:** the spec deferred hiking taste (AIP-09). §4 now holds the accepted records from calibration session 1 (2026-09-25), which are candidates to fold back into the spec as the hiking AIP-09 packet.
 
 ---
 
@@ -88,42 +88,60 @@ A progression outing raises **one** demand dimension at a time and keeps the oth
 
 ---
 
-## 4. Sources of delight — HYPOTHESES (taste layer not yet elicited)
+## 4. Sources of delight — calibrated taste layer
 
-Each hypothesis has a confidence label and a **disconfirmation test**, meaning what would prove it wrong. Use these to rank candidates *tentatively*, state the value tier as "provisional", and lower personal-fit confidence.
+Calibration session 1: 2026-09-25, forced-choice plus multi-select, answered by Aaron. Records below are **accepted** at the stated confidence. One session gives direction, not precise weights, so re-test the weights after real outings.
 
-| # | Hypothesis | Conf. | Basis | Would be wrong if… |
+### 4.1 Accepted taste records
+
+| ID | Record | Conf. | Evidence (2026-09-25) | Engine behavior |
 |---|---|---|---|---|
-| D1 | **Controlled challenge and felt progress** is a primary satisfaction: a route that teaches him something about his body or skill beats an equally pretty route that doesn't. | **HIGH** | Risk posture "actively identify controlled challenge"; rehab objective; surf value is centered on progression reps; cycling outing modes | He rates an easy scenic stroll above a well-run progression hike |
-| D2 | **Immersion / restoration** is a distinct valued mode, not a lesser one ("Best restorative or immersive choice" is a named portfolio role). | MED | Portfolio role he defined | He never picks it, or rates it as filler |
-| D3 | **Wildness gradient:** "more wilderness" is a desired direction of refinement. He prefers places that *feel* remote over manicured parks, holding travel constant. | MED | "Same feeling with less driving, more wilderness" is a named interaction | He prefers amenity-rich parks, or wildness adds no value once travel cost is counted |
-| D4 | **Scenery, ecology, and solitude are separate axes** he wants to feel. Ecology (distinctive ecosystems, not just views) is plausibly strong. | MED on existence, **UNKNOWN on weights** | Outing-history fields he specified: enjoyment, scenery, ecology, solitude | Post-hike ratings show one axis dominating or one irrelevant |
-| D5 | **Rarity and timing:** he values windows that are only good *now* (seasonal phenomena, rare conditions) more than evergreen options. | MED | "Rare-condition window" role; watches on seasonal phenomena and condition regimes | He ignores rare-window alerts in favor of known favorites |
-| D6 | **Crowds:** light-to-moderate is fine, and dense or competitive crowding lowers fit. He's probably *not* someone for whom solitude is essential. | LOW-MED | Surf lineup preference (explicit, but a different activity); disliked traffic environments in cycling | He seeks empty trails and rates busy trails sharply lower (→ solitude stronger), or doesn't care |
-| D7 | **Water and distinctive landforms** (streams, gorges, lakeshore, dunes, bogs/heath barrens) add delight. | LOW | Saved maps skew to stream gorges (Wissahickon, Patapsco) and unusual ecosystems (Pine Barrens, Dolly Sods/Canaan Valley); lake-oriented activity lanes | He's indifferent to water, or prefers ridges and views |
-| D8 | **Exploration / novelty:** new places and route-finding are rewarding, and strong navigation makes this cheap. | LOW | Cycling "exploration" objective; the depth of his navigation skills | He repeats favorites and rates repeats as high as new places |
-| D9 | **Low friction is itself a value:** a good transit-reachable hike can beat a better drive-to hike. | MED | Multimodal "may be prioritized"; "Best low-friction choice" role | He always trades more driving for a better place |
-| D10 | **Wonder and awe**, plus an interest in overnight/under-the-stars options. | LOW | Co-authored planning sheet | — (co-authored; don't weight without confirmation) |
-| D11 | **Ethical access** is part of the pleasure, not only a constraint: public, legitimate, low-impact access, and no secret or sensitive spots. | HIGH | Explicit exclusion rules | — (treat as a rule) |
+| USR-HIK-TASTE-001 | **Openness and remoteness beat access convenience.** An open, big-sky, remote-feeling landscape justifies a long drive over a pleasant, transit-close wooded option. | HIGH | Chose a 4 h drive to Dolly Sods-type heath over a 40 min train to a Wissahickon-type gorge. Named "openness / big sky" and "feeling of remoteness" as the reasons, and did *not* name novelty or "making a day of it". | Weight openness and remoteness heavily. Travel time is a cost, not a veto, for high-openness places within the 4 h Exceptional stretch. |
+| USR-HIK-TASTE-002 | **Felt capability is a primary reward.** "The body worked" is part of what makes a hike great. Given an ordinary hard hike vs an easy hike at a rare peak, he picks the hard one. | HIGH | Learn-vs-rare pair; Patapsco "the body worked" | Progression value lifts the value tier. A well-designed controlled-progression route is a first-class recommendation, not a consolation. |
+| USR-HIK-TASTE-003 | **Flow and momentum, with dwell stops.** Keeps a rhythm and covers ground, but stops at length at payoffs such as overlooks and water. | HIGH | Patapsco "flow / momentum"; pace style | Prefer routes with continuous walkable stretches punctuated by real payoff points. Budget dwell time in duration estimates, roughly +15–25%, to be calibrated. |
+| USR-HIK-TASTE-004 | **Water is a strong positive:** lakeshore/dunes, rivers/gorges, water along the route. | HIGH | Landscape picks; Patapsco "river / water"; loved the Pine Barrens (cedar-water rivers) | Water adjacency is a major value driver. |
+| USR-HIK-TASTE-005 | **Hike-plus-swim in summer.** Summer is appealing specifically as morning or evening hikes with swimming access. | HIGH | Stated in his own words | In summer, favor early or late windows and routes that end at, or pass, a legal swimming spot. Swimming stays under its own lane's gates: designated or guarded swimming is Live, unguarded open water is Inventory-only. |
+| USR-HIK-TASTE-006 | **Views and elevated vantage are positive.** | MED-HIGH | Picked "bluffs / ridges / views"; open-sky driver | Overlooks and bluff edges add value. Exposure still follows the terrain matrix. |
+| USR-HIK-TASTE-007 | **Seasons:** spring, fall, and winter are all welcome. Summer only in the swim-access form (TASTE-005). | HIGH | Season picks | Winter hiking is a desired lane, but snow and ice remain Controlled progression under §3.3. |
+| USR-HIK-TASTE-008 | **Vetoes** (taste, not safety): road/traffic noise; crowds and bottlenecks; bugs, heat, and mud. | HIGH | Veto list | A route materially exposed to a veto drops ≥1 value tier and must be disclosed. Readiness is unchanged. Mud-heavy routes appear only when the mode is explicitly a wet-footing progression. Watch bug season (spring/summer wetlands and woods) and heat. |
+| USR-HIK-TASTE-009 | **Crowd rule:** busy iconic trails are acceptable only when the payoff is truly exceptional. Crowding and bottlenecks otherwise lower value. | HIGH | "Depends on the payoff" plus the veto | For iconic places, recommend off-peak windows (weekday, early start, shoulder season) and quieter alternative approaches. |
+| USR-HIK-TASTE-010 | **Company is neutral.** Solo or together, no standing preference. | HIGH | Stated | No value adjustment. Companion disposition stays a safety output only. |
+| USR-HIK-TASTE-011 | **Route shape doesn't matter;** terrain does. | HIGH | Stated | Pick loop, out-and-back, or point-to-point by payoff, logistics, and bailout. |
+| USR-HIK-TASTE-012 | **Loved places (reference anchors):** Pine Barrens (Wharton SF), and Middlesex Fells and/or Claremont Canyon. Not selected: Wissahickon, Dolly Sods/Canaan (not hiked, or not loved; unknown which). | MED | Past-places pick | Use these for "same feeling as X" matching. Pine Barrens is flat, sandy, and remote-feeling with dark-water rivers, which shows that *remote feel plus water* can deliver without elevation. |
 
-### 4.1 Explicit UNKNOWNs (calibration targets; do not default)
-- Relative weights of scenery vs ecology vs solitude vs challenge vs novelty
-- Preferred hike *shape*: loop vs out-and-back vs point-to-point; summit/destination vs journey
-- Seasonal preferences (heat and humidity tolerance, bugs, fall color, winter hiking appetite)
-- Tolerance for trail-side infrastructure (roads, noise, buildings, rail trails)
-- Solo vs companion *preference* (as opposed to safety disposition)
-- Whether cultural or historic features add value
-- Pace and dwell style (steady mileage vs stops for photography, botany, birding)
-- What happened on the named places (Fells, Wissahickon, Pine Barrens, Claremont, Dolly Sods/Canaan): did he hike them, and did he love them?
+### 4.2 Demoted or weakened hypotheses
 
-### 4.2 Fastest path to "no" (elicitation, ≤10 min)
-1. **Rate 3–5 past outings** (Patapsco first) on enjoyment, scenery, ecology, solitude, exertion, and repeat desire, 1–5 each. Add one sentence each on *the moment it was best* and *what it would have taken to be better*.
-2. **Forced-choice pairs** (answer on instinct):
-   - Wissahickon-style wooded gorge 40 min by train vs Dolly Sods-style open heath barrens 4 h by car
-   - Hard hike that teaches you something vs easy hike at a rare seasonal peak
-   - Busy iconic trail vs quiet unremarkable trail
-   - Lakeshore/dunes vs river gorge vs prairie/savanna vs bluff views
-   - Loop vs point-to-point via transit
-3. **One veto list:** things that reliably ruin a hike for him.
+| Former | Status | Why |
+|---|---|---|
+| D8 Exploration/novelty as a driver | **Weakened → LOW** | "Strangeness/novelty" not picked for heath; monotony not a veto |
+| D9 Low friction as a value | **Weakened → tiebreaker only** | 4 h open heath chosen over a 40 min train gorge. Transit access stays a *tiebreaker* and a "best low-friction" portfolio role, not a main value driver |
+| D4 Subtle ecology (prairie, savanna, wetland) | **Weakened → LOW** | Not picked as a landscape that lights him up. Ecology may still add value through distinctive *open* or *water* ecosystems (heath, pine barrens) |
+| D6 Crowds | **Superseded** by TASTE-009 | |
+| D1, D3, D11 | **Promoted** into TASTE-002, TASTE-001, and §1 rules | |
+| D5 Rarity/timing | **Held → MED**; ranks *below* progression (TASTE-002) | |
+| D2 Restorative/immersive, D10 Wonder/awe | **Still UNKNOWN**: untested this session | |
 
-Once answered, promote hypotheses to **accepted USR-HIK-TASTE records** and fold them back into the spec as the hiking AIP-09 packet.
+### 4.3 Value-scoring heuristic (provisional weights, recalibrate after outings)
+
+For a route that passes the gates, start at **Worthwhile**. Then:
+- **+1 tier** for each strong hit on:
+  - openness/remoteness (TASTE-001)
+  - water adjacency or swim access in season (TASTE-004/005)
+  - a meaningful, well-designed progression dimension (TASTE-002)
+- **+½ tier** for:
+  - views/bluffs (TASTE-006)
+  - good flow terrain with payoff stops (TASTE-003)
+- **−1 tier** for each material veto exposure (TASTE-008), or unavoidable crowding without an exceptional payoff (TASTE-009).
+- **Cap at Strong** unless at least two major drivers hit. **Exceptional** needs openness/remoteness *and* water, or either one *plus* a rare-timing window.
+- Always name which records drove the tier.
+
+### 4.4 Remaining UNKNOWNs (next calibration targets)
+- Whether it was Fells or Claremont (or both) that he loved, and why. What made Wissahickon not qualify (not hiked, or hiked and meh)?
+- Whether Dolly Sods has been hiked. If yes and not loved, that directly tests TASTE-001.
+- How much restorative/immersive and wonder/awe matter
+- How much cultural or historic features add
+- Heat threshold (what temperature or humidity turns a summer hike into a veto)
+- Tolerance for trail-side infrastructure short of road noise (rail trails, visible buildings)
+
+### 4.5 Ongoing calibration
+After each outing, collect 1–5 ratings on enjoyment, openness/remoteness, water, views, flow, exertion, veto exposure, and repeat desire, plus the "best moment" and "what would have made it better". Keep these separate from the symptom log. Revise the weights in §4.3 once there are ≥5 rated outings, and log each revision with its date.

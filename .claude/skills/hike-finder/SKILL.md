@@ -1,6 +1,6 @@
 ---
 name: hike-finder
-description: Identify, evaluate, and recommend hiking locations Aaron will love within any specified geography, using his accepted capability/safety profile and his (still-hypothetical) taste profile. Trigger on "where should I hike", "find hikes near/in X", "best hike this weekend", "evaluate this trail", "compare these hikes", or any request to rank or recommend walking/hiking places or routes.
+description: Identify, evaluate, and recommend hiking locations Aaron will love within any specified geography, using his accepted capability/safety profile and his calibrated taste profile. Trigger on "where should I hike", "find hikes near/in X", "best hike this weekend", "evaluate this trail", "compare these hikes", or any request to rank or recommend walking/hiking places or routes.
 ---
 
 # Hike Finder
@@ -23,9 +23,10 @@ description: Identify, evaluate, and recommend hiking locations Aaron will love 
 Identity → legal access → safety → evidence → capability & equipment → time & logistics. Apply the terrain matrix per route feature, the progression rule (one dimension up), and hip-flexion handling (poles Recommended on sustained climbs). Output a readiness state for each candidate. Personal value can't rescue a failed gate.
 
 ### 4. Assess personal value separately
-- Score against hypotheses D1–D11 in the profile. Say which hypotheses drove the tier.
-- Label the tier **provisional** and give personal-fit confidence (Low while the taste layer is unelicited).
-- Say what would change the ranking if a hypothesis turned out false.
+- Score with the §4.3 heuristic using the accepted USR-HIK-TASTE records. Say which records drove the tier.
+- Main drivers: openness/remoteness, water (and hike+swim in summer), and well-designed progression. Vetoes: road noise, crowds/bottlenecks, bugs/heat/mud.
+- Give personal-fit confidence. It's Medium after one calibration session; raise it as rated outings accumulate.
+- For "same feeling as X" requests, use the loved-place anchors in TASTE-012.
 
 ### 5. Deliver a small portfolio, not a list
 Fill three to five roles that apply: **Best overall · Best progression · Best low-friction (transit-friendly) · Best restorative/immersive · Rare-condition window**. For each:
