@@ -67,3 +67,15 @@
 ### Taste signal
 - A 15–20 min stop to take in Lake Michigan corroborates TASTE-003 (dwell stops at payoffs) and TASTE-004 (water).
 - Ratings pending: enjoyment, openness, views, water, flow, exertion, veto exposure, repeat desire.
+
+### Follow-up details (user, same day)
+- **Poles:** not used on any segment. This is the main thing to change next time: repeat the same dose *with* poles to see whether that alone changes the TFL response (one variable changed).
+- **TFL tightness peak:** ~**4/10**, during steep ascents and descents. **Range and power restriction eased within ≤1 min** of reaching flat ground.
+  - Pattern: load-dependent, fast-resolving, in-activity.
+  - Note: 4/10 met the planned "stop for the day" threshold. It was transient and the user completed the loop.
+  - **Proposed rule refinement (NOT applied; needs Aaron's explicit OK because it would loosen a stop rule):** a 4/10 that fully clears within ~1 min on flat ground = pause, re-check, and continue only on non-steep terrain. A 4/10 that persists, or any sharp or pinching pain = stop.
+- **Taste ratings:**
+  - Enjoyment, views, water, flow: **3.75/5**.
+  - Would come back: **yes**.
+  - Highlight: rest at the Lake Michigan shoreline **in rain**, with slow lapping water and rain on the lake: "the edge of a large, welcoming… immense bathtub." Rain was a **plus**.
+- **Calendar check-ins created:** 2026-09-30 21:00 CT and 2026-10-01 08:00 CT, each with a structured 8-item protocol and decision thresholds.

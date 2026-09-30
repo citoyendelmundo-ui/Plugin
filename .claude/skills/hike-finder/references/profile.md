@@ -47,6 +47,7 @@ Confidence labels: **HIGH** = stated and accepted by Aaron · **MED** = he desig
   - Rolling sand was symptom-free.
   - Steep sand ascents and descents brought mild in-activity left IT-band/TFL tightness, with transient ROM and power restriction. Essentially zero pain immediately after, and energy to continue.
   - Evidence for **steep loose-sand grade**, not for cumulative gain above ~800 ft.
+  - **No poles used.** TFL tightness peaked ~4/10 and range and power recovered within ≤1 min on flat ground. Rated 3.75/5; would return.
   - Envelope unchanged until the evening and next-morning logs arrive (FR-HIK-007).
   - Details: `runs/2026-09-30-indiana-dunes-push.md`.
 
@@ -134,7 +135,9 @@ Aaron asked for hikes that are **viable and fun in light rain**. Score rain suit
 | Waterfalls | Rain turns them on | A day during or 12–36 h after substantial rain is a **rare-condition window** for seasonal falls (+1). |
 | Views | Fog and cloud cut distant views | Earned-view credit drops to +½ unless clearing is forecast. |
 
-Taste in rain: **UNKNOWN whether moody or foggy atmosphere is itself a delight** or just tolerated. Ask after the first rain outing.
+Taste in rain: **USR-HIK-TASTE-015 (HIGH, first-hand, 2026-09-30).** Rain at the water's edge is a **delight**, not something to tolerate. At Indiana Dunes, resting at the Lake Michigan shoreline in rain (slow lapping water, raindrops on the lake) felt like "the edge of a large, welcoming… immense bathtub."
+- Engine: light rain + water adjacency + a place to linger at the shoreline → **+½ tier**, and a named dwell stop in the plan.
+- Unknown: whether rain without water, such as forest-only routes, delights or is just tolerated.
 
 ### 4.2 Demoted or weakened hypotheses
 
