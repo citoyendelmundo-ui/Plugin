@@ -111,6 +111,23 @@ Calibration session 1: 2026-09-25, forced-choice plus multi-select, answered by 
 | USR-HIK-TASTE-013 | **History and culture add value situationally.** A supporting factor, not a driver. | MED | Stated 2026-09-25 | +½ tier when the historic or cultural feature is integrated into the route and legible (CCC stonework, Indigenous mounds, lighthouse, preserved homestead). No penalty when absent. |
 | USR-HIK-TASTE-014 | **Inclined to stay overnight near a great hike**, and weekdays are available. | HIGH | Stated 2026-09-25 | For Strong+ opportunities more than ~2 h away, surface an overnight variant: a two-day pairing, sunrise/sunset views, weekday timing to dodge crowds. Show that lodging exists but don't source it in detail (spec v0.1 scope). The 3 h / 4 h travel caps are unchanged; going farther still needs explicit expansion. Day 2 of any pairing is gated on a next-morning symptom check, because back-to-back days of load are Untested. |
 
+### 4.1a Light-rain filter (condition-sensitive; added 2026-09-30)
+Aaron asked for hikes that are **viable and fun in light rain**. Score rain suitability per route as a condition overlay. It never replaces readiness.
+
+| Factor | Rain effect | Engine behavior |
+|---|---|---|
+| Thunder or lightning | Safety, not taste | Any thunder in the window → **Hold**. Exposed dune crests, beaches, and bluff tops → **No-go** until 30 min after the last thunder. "Light rain" means no convective cells in the forecast. |
+| Surface drainage | Sand, gravel, crushed stone, and pavement drain; loam, clay, and floodplain turn to mud | Clay or floodplain routes hit the mud veto (TASTE-008) → −1 tier. Wet sand is *firmer*, which is neutral or positive. |
+| Wet rock, roots, boardwalk, stone stairs | Wet footing (USR-HIK-016, Controlled progression) | Wet footing becomes the single progression dimension. **Never stack it** on sustained steep ascent or scrambling. Wet quartzite and sandstone ledges are the worst case. |
+| Stream crossings or canyon floors | Water rises after rain | Required crossing with rising water → **No-go**. Prefer rim and bridge routes. |
+| Cold + wind + rain | Thermal load; exposed lakeshore is worst | Below ~50°F with wind, the shell and insulating layers become required gear. Shorten time on the exposed beach. |
+| Canopy | Shelter makes rain pleasant | Forested routes gain rain suitability. Fully open routes lose it. |
+| Crowds | Rain suppresses them | The crowd veto (TASTE-009) is usually lifted, so iconic places become viable. |
+| Waterfalls | Rain turns them on | A day during or 12–36 h after substantial rain is a **rare-condition window** for seasonal falls (+1). |
+| Views | Fog and cloud cut distant views | Earned-view credit drops to +½ unless clearing is forecast. |
+
+Taste in rain: **UNKNOWN whether moody or foggy atmosphere is itself a delight** or just tolerated. Ask after the first rain outing.
+
 ### 4.2 Demoted or weakened hypotheses
 
 | Former | Status | Why |
