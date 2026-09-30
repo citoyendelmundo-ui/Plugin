@@ -42,6 +42,14 @@ Confidence labels: **HIGH** = stated and accepted by Aaron · **MED** = he desig
 ### 3.1 Demonstrated evidence
 - **Aug 2026, Patapsco Valley SP (MD):** ~10 mi in ~3 h, ≤ ~300 ft reported elevation change. Felt great, no pain. Valid only for long, low-elevation, maintained-trail hiking. **It says nothing about** steep climbing, technical footing, sand, mud, snow, ice, exposure, or heavy packs.
 
+- **2026-09-30, Indiana Dunes SP (provisional; follow-up pending):**
+  - Trail 9 + 3 Dune Challenge: ~5.5 mi, ~755 ft of sand climbing.
+  - Rolling sand was symptom-free.
+  - Steep sand ascents and descents brought mild in-activity left IT-band/TFL tightness, with transient ROM and power restriction. Essentially zero pain immediately after, and energy to continue.
+  - Evidence for **steep loose-sand grade**, not for cumulative gain above ~800 ft.
+  - Envelope unchanged until the evening and next-morning logs arrive (FR-HIK-007).
+  - Details: `runs/2026-09-30-indiana-dunes-push.md`.
+
 ### 3.2 Envelopes
 - **Routine (provisional):** ~4 active hours, ~800 ft reported gain, moderately hilly maintained trail, minimal next-day recovery. Distance, pack weight, footing, and what "elevation" measures are UNKNOWN.
 - **Physical state:** Normal by default. Scoped constraint: **repetitive or sustained uphill left-hip flexion** is the challenging dimension. Show this as a scoped modification, never label Aaron "injured". Past health information alone never creates a restriction.

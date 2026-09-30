@@ -20,3 +20,50 @@
 **Note:** the user's AllTrails screenshot showed the NPS West Beach loop (Dune Succession / West Beach / Long Lake, 3.4 mi, 259 ft, ~270 stairs), not the 3 Dune Challenge. It was added to the comparison doc as a new candidate.
 
 **Comparison doc:** Hike Picker — Chicagoland Fall 2026 (Claude Docs).
+
+---
+
+## OUTCOME: logged 2026-09-30 (user report, same afternoon, before the drive home)
+
+### Exposure actually completed
+| Segment | Done? | Dist · climb | Notes |
+|---|---|---|---|
+| 1 Trail 9 | ✅ | 3.8 mi · 203 ft | ~15–20 min rest ~1 h in, looking at Lake Michigan |
+| (break) | — | — | ~20–30 min seated phone call between segments 1 and 2 |
+| 2 3 Dune Challenge | ✅ | 1.7 mi · 552 ft climbed (318 ft net) | Symptoms during ascents *and* descents (below) |
+| 3 Trail 8 + 7 | ❌ skipped (chose to head home, not symptom-driven) | — | Self-assessed capacity for another 1–2 h |
+| 4 Beach cool-down | ❌ not done | — | — |
+| **Total** | | **~5.5 mi · ~755 ft climbed** | Cumulative gain stayed **inside** the ~800 ft routine |
+
+### Symptom observations (DATA-HIK-004 fields; unsupplied = Unknown)
+| Phase | Region / side | Quality | Provoking load | Effect | Status |
+|---|---|---|---|---|---|
+| During 3DC | Left lateral thigh (IT band) | Tightness | Steep sand ascents and descents | Unknown | Resolved at rest? Unknown |
+| During 3DC | Left TFL (front-lateral hip) | "Slight hypercontraction" feeling | Same | **Restricted range of motion; restricted power** | Unknown whether still present |
+| Immediate post | Hip and thigh | "Essentially zero" pain, aches or side effects | — | Felt energetic; could continue 1–2 h | — |
+| Same evening | — | **pending** | Note: ~1 h+ seated drive = sustained hip flexion | — | — |
+| Next morning | — | **pending** | — | — | — |
+
+- **Unknown:** intensity 0–10 at worst; whether poles were used on climbs, descents, or both; pace.
+
+### Interpretation (association, not causation; not a diagnosis)
+- **Trail 9 (rolling sand, 203 ft):** no reported symptoms. This supports sand footing on rolling dunes as tolerable at this dose.
+- **3 Dune Challenge (steep sand):**
+  - Tolerated and completed. Mild **in-activity** lateral-hip/TFL tightness with a transient ROM and power restriction, on the steep segments only.
+  - This matches the pre-identified risk dimension: repeated hip flexion under load, with descents implicated too (USR-HIK-013/014).
+  - Immediate post-state was clean.
+- **Actual progression dimension tested:** **steep loose-sand grade** (intensity), *not* cumulative gain. The planned 1,000+ ft wasn't reached.
+- **Evidence status:** *provisional*. Per FR-HIK-007 it can't expand the envelope until the same-evening and next-morning follow-ups are logged.
+
+### Proposed next decision (FR-HIK-006: repeat / hold / reduce / cautiously expand)
+- **If evening and next-morning checks are clean → REPEAT the steep-sand dose once before expanding.**
+  - Same 3 Dune Challenge, poles on every ascent and descent.
+  - Log whether the TFL tightness appears earlier, later, or not at all.
+  - Recurrence at the same point with no progression → the steep-grade dimension is still being calibrated; expand nothing yet.
+- **If the repeat is clean, or the tightness shows up later and milder → CAUTIOUSLY EXPAND one dimension:** add segment 3 (cumulative gain → ~1,100 ft) with the same stop rules.
+- **If delayed symptoms appear tonight or tomorrow → HOLD** at rolling-sand dose (Trail 9-type) until clean. If they persist beyond a couple of days, raise it with your clinician or PT.
+- **Devil's Lake plan:** unchanged for now. Its stone stairs are the same movement family (sustained climbing, hip flexion). Tomorrow's log decides whether the split two-day structure stays as designed or gets a lighter Day 1.
+
+### Taste signal
+- A 15–20 min stop to take in Lake Michigan corroborates TASTE-003 (dwell stops at payoffs) and TASTE-004 (water).
+- Ratings pending: enjoyment, openness, views, water, flow, exertion, veto exposure, repeat desire.
