@@ -1,0 +1,40 @@
+{
+  "_comment": "facing = compass bearing the beach looks out toward (W-facing Michigan shore ~ 265). Coordinates are on the shoreline; the model samples a point offshore_km out along `facing`. drive_hours = door-to-water time from home (normal traffic, incl. parking). prep_buffer_hours = how much notice you need on top of the drive: ~1 h for the home break, a workday for 3 h+ trips. window (optional, default 75) = how many degrees either side of `facing` a wind can come from and still send waves in; widen it if the scorecard shows misses on a side wind. Edit freely.",
+  "preferences": {
+    "min_height_ft": 2.0,
+    "min_period_s": 4.5,
+    "min_rating": "fair",
+    "min_window_hours": 2,
+    "daylight_only": true,
+    "home": "5701 N Sheridan Rd, Chicago (Edgewater)",
+    "default_drive_hours": 3,
+    "prep_buffer_hours": 3,
+    "offshore_km": 3,
+    "height_scale": 1.0,
+    "timezone": "America/Chicago"
+  },
+  "models": ["gfs_seamless", "ecmwf_ifs025", "icon_seamless", "gem_seamless"],
+  "spots": [
+    {"id": "chicago-north", "name": "Chicago North Side (Hollywood/Osterman–Montrose) — home", "lat": 41.986, "lon": -87.651, "facing": 70, "drive_hours": 0.25, "prep_buffer_hours": 1},
+    {"id": "chicago-57th", "name": "Chicago 57th St", "lat": 41.790, "lon": -87.578, "facing": 80, "drive_hours": 0.6, "prep_buffer_hours": 1},
+    {"id": "whiting", "name": "Whiting, IN (Whihala)", "lat": 41.683, "lon": -87.492, "facing": 20, "drive_hours": 0.75, "prep_buffer_hours": 1.5},
+    {"id": "ogden-dunes", "name": "Ogden Dunes / Portage, IN", "lat": 41.628, "lon": -87.200, "facing": 345, "drive_hours": 1.0, "prep_buffer_hours": 2},
+    {"id": "michigan-city", "name": "Michigan City, IN", "lat": 41.725, "lon": -86.905, "facing": 320, "drive_hours": 1.25, "prep_buffer_hours": 2},
+    {"id": "new-buffalo", "name": "New Buffalo, MI", "lat": 41.800, "lon": -86.752, "facing": 300, "drive_hours": 1.4, "prep_buffer_hours": 2},
+    {"id": "st-joseph", "name": "St. Joseph, MI", "lat": 42.112, "lon": -86.492, "facing": 285, "drive_hours": 1.75, "prep_buffer_hours": 3},
+    {"id": "south-haven", "name": "South Haven, MI", "lat": 42.400, "lon": -86.287, "facing": 270, "drive_hours": 2.25, "prep_buffer_hours": 3},
+    {"id": "grand-haven", "name": "Grand Haven, MI", "lat": 43.058, "lon": -86.252, "facing": 265, "drive_hours": 3.0, "prep_buffer_hours": 6},
+    {"id": "muskegon", "name": "Muskegon (Pere Marquette), MI", "lat": 43.225, "lon": -86.347, "facing": 260, "drive_hours": 3.25, "prep_buffer_hours": 6},
+    {"id": "ludington", "name": "Ludington, MI", "lat": 43.955, "lon": -86.452, "facing": 265, "drive_hours": 4.25, "prep_buffer_hours": 8},
+    {"id": "frankfort", "name": "Frankfort, MI", "lat": 44.632, "lon": -86.252, "facing": 265, "drive_hours": 5.25, "prep_buffer_hours": 10},
+    {"id": "empire", "name": "Empire / Sleeping Bear, MI", "lat": 44.810, "lon": -86.072, "facing": 270, "drive_hours": 5.5, "prep_buffer_hours": 10},
+    {"id": "sheboygan", "name": "Sheboygan, WI", "lat": 43.745, "lon": -87.702, "facing": 95, "drive_hours": 2.4, "prep_buffer_hours": 3},
+    {"id": "port-washington", "name": "Port Washington, WI", "lat": 43.390, "lon": -87.867, "facing": 90, "drive_hours": 1.9, "prep_buffer_hours": 3},
+    {"id": "milwaukee", "name": "Milwaukee (Bradford/Atwater), WI", "lat": 43.060, "lon": -87.883, "facing": 100, "drive_hours": 1.5, "prep_buffer_hours": 2},
+    {"id": "racine", "name": "Racine North Beach, WI", "lat": 42.740, "lon": -87.782, "facing": 95, "drive_hours": 1.25, "prep_buffer_hours": 2}
+  ],
+  "buoys": [
+    {"id": "45007", "name": "NDBC 45007 South Lake Michigan", "lat": 42.674, "lon": -87.026},
+    {"id": "45002", "name": "NDBC 45002 North Lake Michigan", "lat": 45.344, "lon": -86.411}
+  ]
+}
