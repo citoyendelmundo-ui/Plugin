@@ -12,9 +12,11 @@ import os
 from datetime import datetime, timedelta, timezone
 
 from .engine import RATINGS, rating_index
+from .report import compass
 from .sources import parse_time
 
-LOG_FIELDS = ["issued", "spot", "valid", "lead_h", "hs_ft", "tp_s", "rating", "agree", "nws_ft"]
+LOG_FIELDS = ["issued", "spot", "valid", "lead_h", "hs_ft", "tp_s", "rating", "agree", "nws_ft",
+              "wind_kt", "wind_dir"]
 OBS_FIELDS = ["time", "wvht_m", "dpd_s", "mwd", "wspd", "wdir"]
 SESSION_FIELDS = ["time", "spot", "rating", "face_ft", "notes"]
 BUCKETS = [(0, 24), (24, 48), (48, 72), (72, 120), (120, 999)]
@@ -50,6 +52,8 @@ def log_forecast(data_dir, issued, spot_id, hours, every_h=6, max_lead_h=168):
             "rating": RATINGS[h["rating"]] if "rating" in h else "",
             "agree": round(h.get("agree", 0), 2),
             "nws_ft": "" if h.get("nws_ft") is None else round(h["nws_ft"], 2),
+            "wind_kt": round(h.get("wind_kt", 0), 1),
+            "wind_dir": "" if h.get("wind_dir") is None else round(h["wind_dir"]),
         })
     _append(os.path.join(data_dir, "log", f"{issued:%Y-%m}.csv"), LOG_FIELDS, rows)
     return len(rows)
@@ -166,8 +170,53 @@ def score(data_dir, min_height_ft=2.0, min_rating="fair"):
             out.append(f"| {b} | {c['n']} | {c['hit']} | {c['miss']} | {c['fa']} | {c['cn']} |")
     if not table:
         out.append("| — | 0 | | | | |")
+    out += ["", *spot_diagnosis(log, sessions, thr)]
     out += ["", "_Log skunks and flat checks too. A log of only good sessions can't show false alarms._", ""]
     return "\n".join(out)
+
+
+def spot_diagnosis(log, sessions, thr):
+    """Per spot: where does the latest forecast disagree with what you saw, and on which winds?
+
+    Misses clustered on one wind direction mean the spot works on winds the model thinks
+    can't reach it: widen its window or rotate `facing` toward that direction. False alarms
+    clustered on one direction mean the opposite.
+    """
+    per = {}
+    for s in sessions:
+        t = parse_time(s["time"])
+        cands = [r for r in log if r["spot"] == s["spot"]
+                 and abs((parse_time(r["valid"]) - t).total_seconds()) <= 3 * 3600
+                 and parse_time(r["issued"]) <= t]
+        if not cands:
+            continue
+        r = max(cands, key=lambda r: parse_time(r["issued"]))  # freshest forecast
+        observed = rating_index(s["rating"]) >= thr
+        pred = r["rating"] in RATINGS and rating_index(r["rating"]) >= thr
+        d = per.setdefault(s["spot"], {"n": 0, "hit": 0, "miss": [], "fa": []})
+        d["n"] += 1
+        d["hit"] += pred and observed
+        wind = compass(float(r["wind_dir"])) if r.get("wind_dir") else "?"
+        if observed and not pred:
+            d["miss"].append(wind)
+        if pred and not observed:
+            d["fa"].append(wind)
+
+    def tally(xs):
+        return ", ".join(f"{k}×{xs.count(k)}" for k in sorted(set(xs), key=xs.count, reverse=True)) or "—"
+
+    lines = ["## Where each spot's model is wrong (freshest forecast before each report)", "",
+             "| Spot | Reports | Hit | Missed surf on winds from | False alarms on winds from |",
+             "|---|---|---|---|---|"]
+    for spot in sorted(per):
+        d = per[spot]
+        lines.append(f"| {spot} | {d['n']} | {d['hit']} | {tally(d['miss'])} | {tally(d['fa'])} |")
+    if not per:
+        lines.append("| — | 0 | | | |")
+    lines += ["", "_Misses bunched on one wind direction: the spot works on winds the model rules out, "
+              "so widen its window or rotate `facing` toward that direction. False alarms bunched on one "
+              "direction: the reverse._"]
+    return lines
 
 
 def now_utc():

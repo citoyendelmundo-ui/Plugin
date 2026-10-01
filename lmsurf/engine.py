@@ -49,13 +49,13 @@ def is_daylight(t, sun):
     return any(rise - timedelta(minutes=30) <= t <= sset + timedelta(minutes=15) for rise, sset in sun)
 
 
-def hourly_ensemble(times, model_winds, fetch_tbl, facing, height_scale=1.0):
+def hourly_ensemble(times, model_winds, fetch_tbl, facing, height_scale=1.0, window=75):
     """Per-hour ensemble: median wave + per-model waves + consensus wind.
 
     height_scale is a calibration multiplier; set it from `lmsurf verify` bias.
     """
     ft = physics.M_TO_FT * height_scale
-    per_model = {m: physics.wave_series(w, fetch_tbl, facing) for m, w in model_winds.items()}
+    per_model = {m: physics.wave_series(w, fetch_tbl, facing, window) for m, w in model_winds.items()}
     hours = []
     for i, t in enumerate(times):
         waves = [per_model[m][i] for m in per_model]
@@ -78,7 +78,8 @@ def hourly_ensemble(times, model_winds, fetch_tbl, facing, height_scale=1.0):
 def analyse_spot(spot, prefs, times, model_winds, sun, nws_waves, now):
     lat, lon = geo.offset(spot["lat"], spot["lon"], spot["facing"], prefs["offshore_km"])
     tbl = spot.get("_fetch") or geo.fetch_table(lat, lon)
-    hours = hourly_ensemble(times, model_winds, tbl, spot["facing"], prefs.get("height_scale", 1.0))
+    hours = hourly_ensemble(times, model_winds, tbl, spot["facing"], prefs.get("height_scale", 1.0),
+                            spot.get("window", 75))
     n_models = max(1, len(model_winds))
     for h in hours:
         h["rating"] = rate_hour(h["hs_ft"], h["tp_s"], h["wind_kt"], h["wind_dir"], spot["facing"], prefs)
@@ -95,7 +96,7 @@ def analyse_spot(spot, prefs, times, model_winds, sun, nws_waves, now):
 def find_windows(spot, prefs, hours, now):
     min_r = rating_index(prefs["min_rating"])
     drive = spot.get("drive_hours", prefs["default_drive_hours"])
-    need = drive + prefs["prep_buffer_hours"]
+    need = drive + spot.get("prep_buffer_hours", prefs["prep_buffer_hours"])
     windows, cur = [], []
 
     def close():

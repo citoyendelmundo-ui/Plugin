@@ -177,6 +177,21 @@ class Engine(unittest.TestCase):
         self.assertTrue(wins)
         self.assertFalse(wins[0]["reachable"])
 
+    def test_home_break_needs_little_notice(self):
+        spot = SPOTS["chicago-north"]
+        self.assertLessEqual(spot["drive_hours"] + spot["prep_buffer_hours"], 1.5)
+        far = SPOTS["empire"]
+        self.assertGreaterEqual(far["drive_hours"] + far["prep_buffer_hours"], 12)
+
+    def test_per_spot_window_widens_reach(self):
+        winds = {m: [(12.0, 175.0)] * 30 for m in "ab"}  # S wind at a W-facing beach (90 deg off)
+        times = hours(30)
+        narrow, _ = engine.analyse_spot(SPOTS["grand-haven"], PREFS, times, winds, all_day_sun(times), {}, T0)
+        wide, _ = engine.analyse_spot(dict(SPOTS["grand-haven"], window=100), PREFS, times, winds,
+                                      all_day_sun(times), {}, T0)
+        self.assertEqual(narrow[-1]["hs_ft"], 0)
+        self.assertGreater(wide[-1]["hs_ft"], 1)
+
     def test_daylight_filter(self):
         winds = westerly_event(["a", "b"])
         times = hours(48)
@@ -242,6 +257,16 @@ class Verification(unittest.TestCase):
             self.assertIn("| 45007 | 0-24h |", card)
             self.assertIn("| 24-48h | 1 | 1 | 0 | 0 | 0 |", card)  # hit
             self.assertIn("| 48-72h | 1 | 0 | 0 | 1 | 0 |", card)  # false alarm
+
+    def test_spot_diagnosis_points_at_wind_direction(self):
+        with tempfile.TemporaryDirectory() as d:
+            flat = [{"time": T0 + timedelta(hours=i), "hs_ft": 0.5, "tp_s": 2.0, "rating": 0,
+                     "agree": 0.0, "nws_ft": None, "wind_kt": 15.0, "wind_dir": 20.0} for i in range(48)]
+            verify.log_forecast(d, T0, "grand-haven", flat)
+            verify.log_session(d, T0 + timedelta(hours=30), "grand-haven", "good")
+            verify.log_session(d, T0 + timedelta(hours=42), "grand-haven", "fair")
+            card = verify.score(d)
+            self.assertIn("| grand-haven | 2 | 0 | NNE×2 | — |", card)
 
     def test_bad_rating_rejected(self):
         with tempfile.TemporaryDirectory() as d, self.assertRaises(ValueError):

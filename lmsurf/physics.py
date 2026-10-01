@@ -78,7 +78,10 @@ def wave_series(winds, fetch_table, facing=None, window=75):
             h_gen, t_gen = grow(u, fetch, dur)
             if facing is not None:
                 off = angdiff(dr, facing)
-                h_gen = 0.0 if off >= window else h_gen * math.sqrt(math.cos(math.radians(off)))
+                # Obliquity taper; a wider-than-default window is compressed onto the default
+                # 75-degree curve so the factor stays positive even past 90 degrees.
+                eff = off * 75.0 / max(window, 75.0)
+                h_gen = 0.0 if off >= window else h_gen * math.sqrt(math.cos(math.radians(eff)))
         h_dec, t_dec = prev_h * decay, prev_t * 0.985
         if h_gen >= h_dec:
             h, t, d = h_gen, max(t_gen, t_dec if h_dec > 0.5 * h_gen else 0.0), dr

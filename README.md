@@ -30,11 +30,11 @@ The wind ensemble does the main work, for two reasons: it reaches further ahead 
 ## Setup (≈10 minutes)
 
 1. **Merge this branch to the default branch.** GitHub only runs scheduled workflows from the default branch.
-2. **Edit `spots.json`:**
-   - `preferences.timezone`: your local zone.
-   - Per spot, set `drive_hours` (door-to-water). Spots without it use `default_drive_hours`.
-   - Delete spots you won't drive to, and check each `facing` bearing against your local knowledge.
-   - `min_height_ft`, `min_period_s` and `min_rating` set what counts as surfable for you.
+2. **`spots.json` is preconfigured** for home at 5701 N Sheridan Rd (Edgewater). Hollywood/Osterman is the home break. Each spot carries:
+   - `drive_hours`: door-to-water time from Edgewater in normal traffic. Adjust for rush hour if you'd be leaving then.
+   - `prep_buffer_hours`: notice needed on top of the drive. It's 1 h for the home break, up to ~10 h for the Leelanau trips, where you'd need to clear a workday.
+   - `window` (optional, default 75°): how far off `facing` a wind can blow and still send waves in. Leave it at the default until the scorecard says otherwise.
+   - Worth-the-drive threshold: `min_height_ft` 2.0, `min_period_s` 4.5, `min_rating` fair.
 3. **Phone push (optional):** install the ntfy app, subscribe to a hard-to-guess topic name, and add it as the repo secret `NTFY_TOPIC`. Without it you still get GitHub issue notifications.
 4. **Run it once:** Actions → *Lake Michigan surf* → Run workflow → `run`.
 
@@ -45,9 +45,13 @@ After every beach check, **including skunks and flat days**, log what you found:
 - From your phone: Actions → *Lake Michigan surf* → Run workflow → `log-session`, then fill in spot, local time and rating.
 - From a laptop: `python -m lmsurf log-session --spot grand-haven --time 2026-10-06T08:00 --rating good --face-ft 4`
 
+**Webcam checks count.** Every time an alert fires, or a flat call looks suspicious, look at a public cam for that beach and log what you see (add `--notes cam`). That builds the per-spot record without driving, and it's how the tool learns which beaches its direction model gets wrong.
+
 `data/scorecard.md` then shows, per lead-time bucket:
 - **vs. buoys (45007, 45002):** bias and error of the wave model in feet. If the bias is consistently +1 ft, set `height_scale` (e.g. 0.8) in `spots.json`.
 - **vs. your sessions:** hits, misses and false alarms. This is the real test of usefulness.
+
+- **Per spot, "where the model is wrong":** misses and false alarms tallied by the wind direction that was forecast. Missed surf bunched on one direction (e.g. "Missed surf on winds from NNE×4" at Michigan City) means the spot works on winds the model rules out. Widen that spot's `window` or rotate `facing` toward that side. False alarms bunched on one direction mean the reverse. Treat ~3 reports in the same direction as a pattern, and change one setting at a time.
 
 **Ways this could turn out to be wrong, and what each would mean:**
 - WATCH-tier calls at 72–120 h verify less than about a third of the time. The 5-day horizon is noise, so raise the WATCH threshold or shorten it to 72 h.
@@ -59,7 +63,7 @@ After every beach check, **including skunks and flat days**, log what you found:
 
 - **Shoreline is hand-digitised** (~5–10 km error). Fetch is good to roughly ±10%. Green Bay and the Straits are treated as closed.
 - **Deep-water growth formulas.** There's no shoaling, breaking or refraction, and piers and sandbars aren't modelled. `height_scale` plus the scorecard is the correction path.
-- **Spot `facing` values are first guesses.** Correct them from experience. That's the single biggest per-spot accuracy lever.
+- **Spot `facing` values are first guesses** from shoreline orientation, not local knowledge. They're the single biggest per-spot accuracy lever, and the per-spot scorecard is how to correct them.
 - **NDBC buoys are pulled for winter** (roughly Nov–Apr), so buoy scoring pauses then and session logs carry the load.
 - **The code is untested against live APIs.** It was built in a sandbox with no outbound access to NOAA or Open-Meteo. Parsers are written to the documented schemas and unit-tested with fixtures. The first Actions run is the live test, and the report's *Data notes* section will flag any source that comes back empty.
 
