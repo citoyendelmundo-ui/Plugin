@@ -1,0 +1,97 @@
+name: Lake Michigan surf
+
+on:
+  schedule:
+    # Shortly after the 00/06/12/18Z global model cycles land on Open-Meteo.
+    - cron: "17 5,11,17,23 * * *"
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "run = refresh outlook now; log-session = record what you found at a beach"
+        type: choice
+        options: [run, log-session]
+        default: run
+      spot:
+        description: "log-session: spot id from spots.json (e.g. grand-haven)"
+        required: false
+      time:
+        description: "log-session: local time you checked/surfed, e.g. 2026-10-06T08:00"
+        required: false
+      rating:
+        description: "log-session: what it actually was"
+        type: choice
+        options: [flat, poor, fair, good, epic]
+        default: fair
+      face_ft:
+        description: "log-session: optional face height you saw (ft)"
+        required: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: surf-data
+  cancel-in-progress: false
+
+jobs:
+  surf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Log session
+        if: github.event_name == 'workflow_dispatch' && inputs.action == 'log-session'
+        env:
+          SPOT: ${{ inputs.spot }}
+          WHEN: ${{ inputs.time }}
+          RATING: ${{ inputs.rating }}
+          FACE: ${{ inputs.face_ft }}
+        run: |
+          args=(log-session --spot "$SPOT" --time "$WHEN" --rating "$RATING")
+          if [ -n "$FACE" ]; then args+=(--face-ft "$FACE"); fi
+          python -m lmsurf "${args[@]}"
+          python -m lmsurf verify > data/scorecard.md
+
+      - name: Forecast
+        if: github.event_name == 'schedule' || inputs.action == 'run'
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          python -m unittest discover -s tests
+          python -m lmsurf run > /dev/null
+          python -m lmsurf verify > data/scorecard.md
+
+      - name: Publish outlook to issue
+        if: github.event_name == 'schedule' || inputs.action == 'run'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Lake Michigan surf outlook"
+          num=$(gh issue list --state open --search "in:title \"$title\"" --json number,title \
+                --jq "map(select(.title == \"$title\")) | .[0].number // empty")
+          if [ -z "$num" ]; then
+            url=$(gh issue create --title "$title" --body-file data/outlook.md)
+            num=${url##*/}
+          else
+            gh issue edit "$num" --body-file data/outlook.md
+          fi
+          # A comment (not an edit) is what triggers GitHub's email/mobile notification.
+          if [ -f data/alerts.txt ]; then
+            { echo "🌊 **New/upgraded surf windows**"; echo; echo '```'; cat data/alerts.txt; echo '```'; } > /tmp/alert.md
+            gh issue comment "$num" --body-file /tmp/alert.md
+          fi
+
+      - name: Commit forecast log and observations
+        run: |
+          git config user.name "surf-bot"
+          git config user.email "surf-bot@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "surf data $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && exit 0; sleep 5; done
+          exit 1
