@@ -79,3 +79,18 @@
   - Would come back: **yes**.
   - Highlight: rest at the Lake Michigan shoreline **in rain**, with slow lapping water and rain on the lake: "the edge of a large, welcoming… immense bathtub." Rain was a **plus**.
 - **Calendar check-ins created:** 2026-09-30 21:00 CT and 2026-10-01 08:00 CT, each with a structured 8-item protocol and decision thresholds.
+
+### Same-evening check-in (user report; sent around midnight Sep 30 / Oct 1)
+| Item | Value | Note |
+|---|---|---|
+| Hip **joint** tenderness | ~1.5/10 | New location descriptor: the joint, not TFL/IT band |
+| Stiffness | ~2/10 | "Slightly" |
+| Range of motion | Slightly reduced | User attributes this to **baseline**, not the hike |
+| TFL / lateral thigh | **not reported** | Needed: this was the in-hike symptom site |
+| Sit-to-stand, walk/limp, stairs up/down, single-leg stance, post-drive stiffness | **not reported** | — |
+| Confounders (pain relievers, stretching/foam rolling/heat/ice, prolonged sitting) | **not reported** | — |
+| Other regions (calves/Achilles/feet, knees, low back, glutes) | **not reported** | — |
+
+- **Interpretation:** low-grade (≤2/10) joint tenderness and stiffness. Delayed response is minimal *if* baseline is ~1–2.
+- **Measurement gap:** there's no measured pre-hike baseline, so "baseline" is recalled. The morning check-in (updated with a baseline-anchor item, split hip locations, other regions, confounders, and trend) closes most of this.
+- Evidence remains **provisional** pending the next-morning check.
