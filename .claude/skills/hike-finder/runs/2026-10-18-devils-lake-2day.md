@@ -81,3 +81,47 @@ Source: `devils-lake-route-maps.html` (published artifact), built from AWS Terra
 - Tuesday's Ice Age Trail route carries ~1,400 ft, mostly the 475-ft Roznos climb plus the East Bluff. It is not as gentle as first described.
 - Option 3 Monday swaps Roznos Meadow for Steinke Basin, which is flat and connects to the Grottos.
 - Map tooling lives in `tools/` (`dem.py`, `trails.py`, `build.py`, `map-template.html`).
+
+## Overlap check (user question, 2026-10-18) and redesign
+**Measured from the drawn routes:** the share of Tuesday's walked miles on trail Monday already used.
+
+| Option | Shared share | Shared trail |
+|---|---|---|
+| 1 | 36% | North Shore, East Bluff Trail, East Bluff Woods |
+| 3 | 36% | Same as Option 1 |
+| 2 | 100% | Same figure-eight, reversed |
+
+- By distinct trail, Options 1 and 3 share ~53% of Tuesday's trail.
+- Experiential overlap is higher than mileage suggests, because both days climb the East Bluff and end at the same overlook.
+- **The user's 40–50% read is accurate for Options 1 and 3. Option 2 is worse.**
+
+### Redesign: Monday = the lake; Tuesday = the country around it (~0% shared trail)
+**Tuesday "Beyond the bluffs"** (all options), driving between three stops and ending on the way home:
+1. **Roznos Meadow + Uplands loop** from the Hwy 113 lot. ~3.5–4 mi, ~475 ft.
+   - Prairie meadow with sand dunes, stream switchbacks up the bluff, and a filtered view of Lake Wisconsin from the Uplands.
+   - Geometry is approximate.
+2. **Parfrey's Glen** (10 min east): sandstone gorge and stream, ~1.5 mi round trip.
+   - Open 6 am–8 pm; state park sticker required.
+   - The boardwalk is gone, so the last stretch is in the streambed on rough stone (wet footing = untested). Turn around where the footing turns to streambed if you're tired or it's wet.
+3. **Merrimac Ferry** across Lake Wisconsin (free, 24/7 in season; the Wednesday refuel break doesn't apply on a Tuesday) → **Gibraltar Rock**.
+   - ~1.5 mi loop, ~300 ft, to a 200-ft sandstone cliff with a panorama over Lake Wisconsin and the Wisconsin River valley.
+   - Sits on the route home.
+- **Totals:** ~6.5–7 mi of hiking, ~800–900 ft, ~4–5 h on foot plus ~45 min of driving between stops.
+
+**Monday choices (all lake-based, no overlap with Tuesday):**
+- **Standard:** figure-eight + Grottos. 8.5 mi · 1,160 ft.
+- **Big (replaces Option 2):** figure-eight + Grottos + Steinke Basin. ~10.5 mi · ~1,250 ft.
+- **Gentle:** East Bluff loop + lakeshore + Grottos + Steinke. 10.4 mi · 830 ft.
+
+**What changes:**
+- **Gains:**
+  - three distinct landscapes (prairie, gorge, Lake Wisconsin butte);
+  - water on both days;
+  - a second earned view over different country;
+  - a ferry crossing (novelty/history);
+  - lower stair load on day two;
+  - the drive home starts from Gibraltar.
+- **Costs:**
+  - Tuesday breaks into three shorter walks with ~45 min of driving, so less continuous flow (TASTE-003).
+  - Parfrey's Glen footing is rough.
+  - Tuesday's East Bluff overlook visit is gone (it's on Monday).
