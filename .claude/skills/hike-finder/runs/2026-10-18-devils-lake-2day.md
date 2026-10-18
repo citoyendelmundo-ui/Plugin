@@ -125,3 +125,23 @@ Source: `devils-lake-route-maps.html` (published artifact), built from AWS Terra
   - Tuesday breaks into three shorter walks with ~45 min of driving, so less continuous flow (TASTE-003).
   - Parfrey's Glen footing is rough.
   - Tuesday's East Bluff overlook visit is gone (it's on Monday).
+
+## Map v2 (published to the same artifact): Monday plans + new Tuesday
+| Plan | Miles | Climb | Time |
+|---|---|---|---|
+| Mon Standard (figure-eight + Grottos) | 8.5 | 1,160 ft | ~5h |
+| Mon Big (+ Steinke Basin) | 10.0 | 1,290 ft | ~5h45 |
+| Mon Gentle | 10.4 | 830 ft | ~5h20 |
+| Tue Beyond the bluffs | 5.6 | 1,210 ft | ~3h50 on foot + ~45 min driving |
+
+**Tuesday by stop:**
+- Roznos + Uplands: 2.8 mi · 592 ft.
+- Parfrey's Glen out and back: 1.5 mi · 282 ft.
+- Gibraltar Rock: 1.3 mi · 332 ft.
+
+**Correction:** Tuesday is shorter than the 6.5–7 mi first stated (5.6 mi measured from lines calibrated to published lengths). At an 8:30 start it finishes ~1 pm. Room remains to add the Ice Age Trail Gibraltar Rock segment or a longer Uplands walk if the morning check is clean.
+
+**Terrain anchors:**
+- Gibraltar summit: DEM 1,259 ft at 43.3432, -89.6004 (published 1,234–1,246).
+- Lake Wisconsin: 773.9 ft.
+- Ferry: narrows near Merrimac, ~43.37, -89.62.
