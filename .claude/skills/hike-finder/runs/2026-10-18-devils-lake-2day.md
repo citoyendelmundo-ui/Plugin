@@ -67,3 +67,17 @@
 ## Value
 - Exceptional (earned views ×2, lake, color, weekday solitude, CCC history).
 - Fit confidence High.
+
+## Map-derived numbers (supersede the estimates above)
+Source: `devils-lake-route-maps.html` (published artifact), built from AWS Terrain Tiles (~7 m) with hand-placed trail lines. Distances and gain are computed from the drawn lines (±10–15%). Time = mi/3 + 1 h per 1,000 ft, then +25% for stops.
+
+| Option | Mon Oct 19 | Tue Oct 20 |
+|---|---|---|
+| 1 | 8.5 mi · 1,160 ft · ~5h with stops | 7.7 mi · 1,400 ft · ~5h |
+| 2 | 10.2 mi · 1,420 ft · ~6h | 8.5 mi · 1,120 ft · ~5h |
+| 3 | 10.4 mi · 830 ft · ~5.5h | 7.7 mi · 1,400 ft · ~5h |
+
+- Option 1 Monday is longer than first estimated (8.5 vs 6.5 mi), because the figure-eight needs the Tumbled Rocks return and the Grottos out-and-back.
+- Tuesday's Ice Age Trail route carries ~1,400 ft, mostly the 475-ft Roznos climb plus the East Bluff. It is not as gentle as first described.
+- Option 3 Monday swaps Roznos Meadow for Steinke Basin, which is flat and connects to the Grottos.
+- Map tooling lives in `tools/` (`dem.py`, `trails.py`, `build.py`, `map-template.html`).

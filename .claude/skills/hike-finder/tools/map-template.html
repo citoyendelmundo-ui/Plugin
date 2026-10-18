@@ -1,0 +1,288 @@
+<title>Devil's Lake Route Maps</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: field-map sheet — selector bar, map + route card side by side, profile beneath, six-day comparison grid at common scale */
+:root{
+  --paper:#f6f4ee; --sheet:#fffdf8; --ink:#1f2421; --muted:#5d6560; --rule:#d9d4c7;
+  --contour:#b07a4f; --contour-idx:#8a5a33; --water:#bcd7e6; --water-edge:#6f9fbd; --trail:#7b7f7a;
+  --o1:#c2410c; --o2:#a21caf; --o3:#15803d; --sun:#e0a526; --night:#2d3a4a;
+  --shade-op:.5; --shade-filter:none;
+  --f-ui:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif; --f-num:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#161a1c; --sheet:#1d2225; --ink:#e7e9e4; --muted:#a2aaa5; --rule:#343b3f;
+  --contour:#9a7556; --contour-idx:#c19670; --water:#1f3b4d; --water-edge:#4f86a8; --trail:#8d928d;
+  --o1:#fb8a4c; --o2:#e879f9; --o3:#4ade80; --sun:#f2c14e; --night:#0d1217;
+  --shade-op:.22; --shade-filter:invert(1); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#161a1c; --sheet:#1d2225; --ink:#e7e9e4; --muted:#a2aaa5; --rule:#343b3f;
+  --contour:#9a7556; --contour-idx:#c19670; --water:#1f3b4d; --water-edge:#4f86a8; --trail:#8d928d;
+  --o1:#fb8a4c; --o2:#e879f9; --o3:#4ade80; --sun:#f2c14e; --night:#0d1217;
+  --shade-op:.22; --shade-filter:invert(1); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+.wrap{max-width:1240px;margin:0 auto;display:grid;gap:18px}
+header h1{font-size:28px;line-height:1.1;margin:0 0 4px;font-weight:700;letter-spacing:.01em;text-wrap:balance}
+header p{margin:0;color:var(--muted);max-width:75ch}
+.bar{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--sheet)}
+.seg button{font:inherit;font-weight:600;border:0;background:transparent;color:var(--ink);padding:8px 14px;cursor:pointer;display:flex;gap:8px;align-items:center}
+.seg button+button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.seg button:focus-visible,.cell:focus-visible{outline:2px solid var(--o1);outline-offset:2px}
+.sw{width:14px;height:4px;border-radius:2px;display:inline-block}
+.lbl{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+@media (max-width:900px){.main{grid-template-columns:minmax(0,1fr)}}
+.mapbox{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;overflow:hidden;position:relative}
+.mapbox svg{display:block;width:100%;height:auto;touch-action:manipulation}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:16px;display:grid;gap:12px;min-width:0}
+.card h2{margin:0;font-size:20px;line-height:1.2;text-wrap:balance}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+.stat b{display:block;font-family:var(--f-num);font-size:22px;font-weight:500;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.push{border-left:3px solid var(--cur);padding:2px 0 2px 10px;font-weight:500}
+.card ol{margin:0;padding-left:18px;display:grid;gap:6px}
+.card ol li{padding-left:2px}
+.flag{font-size:12.5px;color:var(--muted)}
+.profile{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px 12px 6px}
+.profile svg{width:100%;height:auto;display:block}
+.grid6{display:grid;grid-template-columns:auto repeat(2,minmax(0,1fr));gap:8px;align-items:stretch}
+.grid6 .hd{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600;align-self:end;padding:0 4px}
+.rowlbl{display:flex;flex-direction:column;justify-content:center;gap:2px;padding-right:6px;font-weight:600;min-width:92px}
+.rowlbl small{font-weight:400;color:var(--muted);font-size:12px}
+.cell{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 10px;cursor:pointer;text-align:left;font:inherit;color:inherit;display:grid;gap:4px;min-width:0}
+.cell[aria-pressed="true"]{border-color:var(--cur);box-shadow:0 0 0 1px var(--cur) inset}
+.cell .nums{font-family:var(--f-num);font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.cell .nums b{color:var(--ink);font-weight:500}
+.cell svg{width:100%;height:auto;display:block}
+.dayline svg{width:100%;height:auto;display:block}
+.note{font-size:12.5px;color:var(--muted);max-width:110ch}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--rule)}
+.legend i{display:inline-block;vertical-align:middle;margin-right:6px}
+svg text{font-family:var(--f-ui)}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<div class="wrap">
+  <header>
+    <h1>Devil's Lake: three ways to spend Oct 19–20</h1>
+    <p>Each route drawn on 20-ft contours from a terrain model, so you can see how far, how high, and how long each day really is. Pick an option and a day, or click any cell in the comparison grid.</p>
+  </header>
+  <div class="bar">
+    <div><div class="lbl">Option</div><div class="seg" id="optSeg" role="group" aria-label="Option"></div></div>
+    <div><div class="lbl">Day</div><div class="seg" id="daySeg" role="group" aria-label="Day"></div></div>
+  </div>
+  <div class="main">
+    <div class="mapbox">
+      <svg id="map" role="img" aria-label="Topographic trail map of Devil's Lake State Park with the selected route"></svg>
+      <div class="legend">
+        <span><i style="width:22px;height:4px;background:var(--cur);border-radius:2px"></i>Selected route (arrows = direction)</span>
+        <span><i style="width:22px;border-top:2px solid var(--trail)"></i>Other trails</span>
+        <span><i style="width:22px;border-top:2px dashed var(--trail)"></i>Approximate trail line (±300 m)</span>
+        <span><i style="width:22px;border-top:1.6px solid var(--contour-idx)"></i>100-ft contour</span>
+        <span><i style="width:22px;border-top:.8px solid var(--contour)"></i>20-ft contour</span>
+      </div>
+    </div>
+    <aside class="card" id="card" aria-live="polite"></aside>
+  </div>
+  <section class="profile">
+    <div class="lbl" style="padding:0 4px 4px">Elevation profile · hover or drag to follow it on the map</div>
+    <svg id="prof" role="img" aria-label="Elevation profile of the selected route"></svg>
+  </section>
+  <section>
+    <div class="lbl" style="margin-bottom:8px">All six days at the same scale (miles across, feet up)</div>
+    <div class="grid6" id="grid"></div>
+  </section>
+  <section class="profile dayline">
+    <div class="lbl" style="padding:0 4px 4px">Time against daylight · sunrise ~7:18, sunset ~6:05 pm in Baraboo</div>
+    <svg id="day" role="img" aria-label="Estimated hiking time against daylight for each option and day"></svg>
+  </section>
+  <p class="note">How this was made: elevation from AWS Terrain Tiles (USGS-derived, ~7 m cells), contoured every 20 ft. Lake-loop trails are placed by hand against the terrain and the park's trail layout, accurate to roughly 50–150 m. The Ice Age Trail pieces east of the East Bluff (Uplands, Roznos Meadow, Steinke Basin) are approximate corridors, shown dashed: their published lengths are 1.8 mi (Roznos Meadow) and 2.4 mi (Steinke Basin). Distances and climbing are computed from these drawn lines, so expect ±10–15%. Time uses your own pace: 3 mph on flat ground plus 1 hour per 1,000 ft of climbing, then +25% for stops. Not for navigation; carry the official park map.</p>
+</div>
+<script>
+const D = __DATA__;
+const NS="http://www.w3.org/2000/svg";
+const OPTS=[{id:1,name:"Option 1",sub:"Climb, then distance"},{id:2,name:"Option 2",sub:"Max climbing"},{id:3,name:"Option 3",sub:"Long and gentle"}];
+const DAYS=[{id:1,name:"Mon Oct 19"},{id:2,name:"Tue Oct 20"}];
+let state={opt:1,day:1};
+try{const s=JSON.parse(localStorage.getItem("dl-route")||"null"); if(s&&s.opt&&s.day) state=s;}catch(e){}
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const col=o=>`var(--o${o})`;
+function el(tag,attrs={},parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+const rid=()=>`o${state.opt}d${state.day}`;
+
+/* ---------- map ---------- */
+const map=document.getElementById("map");
+map.setAttribute("viewBox",`0 0 ${D.vbw} ${D.vbh}`);
+const gBase=el("g",{},map);
+el("rect",{x:0,y:0,width:D.vbw,height:D.vbh,fill:"var(--sheet)"},gBase);
+el("image",{href:"data:image/png;base64,"+D.hill,x:0,y:0,width:D.vbw,height:D.vbh,preserveAspectRatio:"none",style:"opacity:var(--shade-op);filter:var(--shade-filter)"},gBase);
+const gC=el("g",{fill:"none"},gBase);
+D.contours.forEach(c=>el("path",{d:c.d,stroke:c.idx?"var(--contour-idx)":"var(--contour)","stroke-width":c.idx?1.1:.45,opacity:c.idx?.9:.6,"data-z":c.z,class:c.idx?"idx":""},gC));
+D.lake.forEach(d=>el("path",{d,fill:"var(--water)",stroke:"var(--water-edge)","stroke-width":1},gBase));
+// contour labels on long index contours
+requestAnimationFrame(()=>{
+  const lab=el("g",{},gBase);
+  gC.querySelectorAll("path.idx").forEach(p=>{
+    const L=p.getTotalLength(); if(L<160) return;
+    for(let f=0.35; f<1; f+=0.55){
+      const a=p.getPointAtLength(L*f), b=p.getPointAtLength(Math.min(L,L*f+4));
+      let ang=Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI; if(ang>90)ang-=180; if(ang<-90)ang+=180;
+      if(a.x<20||a.x>D.vbw-20||a.y<14||a.y>D.vbh-10) continue;
+      const t=el("text",{x:a.x,y:a.y,transform:`rotate(${ang.toFixed(1)} ${a.x.toFixed(1)} ${a.y.toFixed(1)})`,"text-anchor":"middle","dominant-baseline":"middle","font-size":8.5,fill:"var(--contour-idx)",stroke:"var(--sheet)","stroke-width":2.6,"paint-order":"stroke"},lab);
+      t.textContent=p.dataset.z;
+    }
+  });
+});
+const gT=el("g",{fill:"none","stroke-linecap":"round","stroke-linejoin":"round"},map);
+Object.values(D.trails).forEach(t=>el("path",{d:t.d,stroke:"var(--trail)","stroke-width":1.6,"stroke-dasharray":t.conf==="approx"?"5 4":"none",opacity:.85},gT));
+const gR=el("g",{fill:"none","stroke-linecap":"round","stroke-linejoin":"round"},map);
+const halo=el("path",{stroke:"var(--sheet)","stroke-width":8.5,opacity:.85},gR);
+const route=el("path",{"stroke-width":4.2},gR);
+const gArrows=el("g",{},map);
+const gP=el("g",{},map);
+D.pois.forEach(p=>{
+  const g=el("g",{},gP);
+  if(p.type==="trailhead") el("rect",{x:p.x-4.5,y:p.y-4.5,width:9,height:9,fill:"var(--ink)",stroke:"var(--sheet)","stroke-width":1.5},g);
+  else if(p.type==="view") el("path",{d:`M${p.x},${p.y-6} L${p.x+5.5},${p.y+4} L${p.x-5.5},${p.y+4}Z`,fill:"var(--ink)",stroke:"var(--sheet)","stroke-width":1.5},g);
+  else el("circle",{cx:p.x,cy:p.y,r:3.6,fill:"var(--ink)",stroke:"var(--sheet)","stroke-width":1.5},g);
+  const right=p.x<D.vbw-180;
+  const t=el("text",{x:p.x+(right?9:-9),y:p.y+3.5,"text-anchor":right?"start":"end","font-size":11.5,"font-weight":600,fill:"var(--ink)",stroke:"var(--sheet)","stroke-width":3,"paint-order":"stroke"},g);
+  t.textContent=p.name; const s=el("tspan",{"font-weight":400,fill:"var(--muted)"},t); s.textContent=`  ${p.z.toLocaleString()} ft`;
+});
+// labels for water + bluffs
+[["Devil's Lake",D.lakec[0]-34,D.lakec[1],13,"var(--water-edge)"],["WEST BLUFF",58,160,10,"var(--muted)"],["EAST BLUFF",300,265,10,"var(--muted)"]].forEach(([s,x,y,f,c])=>{
+  const t=el("text",{x,y,"font-size":f,"font-weight":700,fill:c,"letter-spacing":f<12?2:0.5,stroke:"var(--sheet)","stroke-width":3,"paint-order":"stroke","font-style":f>12?"italic":"normal"},map); t.textContent=s;});
+// scale bar + north
+const mi=1609.34/D.m_per_unit, hm=mi/2; const sb=el("g",{transform:`translate(${D.vbw-hm-40},${D.vbh-26})`},map);
+el("rect",{x:-12,y:-18,width:hm+32,height:34,fill:"var(--sheet)",opacity:.88,rx:4},sb);
+el("rect",{x:0,y:0,width:hm/2,height:5,fill:"var(--ink)"},sb); el("rect",{x:hm/2,y:0,width:hm/2,height:5,fill:"var(--sheet)",stroke:"var(--ink)","stroke-width":1},sb);
+[["0",0],["¼",hm/2],["½ mi",hm]].forEach(([s,x])=>{const t=el("text",{x,y:-4,"font-size":10,"text-anchor":"middle",fill:"var(--ink)"},sb);t.textContent=s;});
+const na=el("g",{transform:`translate(${D.vbw-24},28)`},map);
+el("path",{d:"M0,-14 L7,8 L0,3 L-7,8Z",fill:"var(--ink)"},na); const nt=el("text",{x:0,y:20,"font-size":10,"text-anchor":"middle",fill:"var(--ink)","font-weight":700},na); nt.textContent="N";
+const cursor=el("circle",{r:6,fill:"var(--sheet)","stroke-width":3,visibility:"hidden"},map);
+
+function drawArrows(){
+  gArrows.innerHTML=""; const L=route.getTotalLength(); const n=Math.max(6,Math.round(L/70));
+  for(let i=1;i<n;i++){const a=route.getPointAtLength(L*i/n), b=route.getPointAtLength(Math.min(L,L*i/n+3));
+    const ang=Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI;
+    el("path",{d:"M-4,-3.6 L3.5,0 L-4,3.6",fill:"none",stroke:"var(--sheet)","stroke-width":1.8,"stroke-linecap":"round","stroke-linejoin":"round",transform:`translate(${a.x.toFixed(1)},${a.y.toFixed(1)}) rotate(${ang.toFixed(1)})`},gArrows);}
+}
+
+/* ---------- profile ---------- */
+const PW=1000,PH=220,pad={l:48,r:12,t:12,b:28};
+const prof=document.getElementById("prof"); prof.setAttribute("viewBox",`0 0 ${PW} ${PH}`);
+const ZMIN=820, ZMAX=1500;
+const maxMi=Math.max(...Object.values(D.routes).map(r=>r.mi));
+function profPath(r,w,h,p,xmax){
+  const X=m=>p.l+(m/xmax)*(w-p.l-p.r), Y=z=>p.t+(1-(z-ZMIN)/(ZMAX-ZMIN))*(h-p.t-p.b);
+  const line=r.prof.map((q,i)=>(i?"L":"M")+X(q[0]).toFixed(1)+","+Y(q[1]).toFixed(1)).join(" ");
+  const area=line+` L${X(r.prof[r.prof.length-1][0]).toFixed(1)},${Y(ZMIN).toFixed(1)} L${X(0).toFixed(1)},${Y(ZMIN).toFixed(1)}Z`;
+  return {line,area,X,Y};
+}
+function drawProfile(){
+  prof.innerHTML=""; const r=D.routes[rid()]; const xmax=Math.ceil(r.mi);
+  const {line,area,X,Y}=profPath(r,PW,PH,pad,xmax);
+  for(let z=900;z<=1500;z+=100){el("line",{x1:pad.l,x2:PW-pad.r,y1:Y(z),y2:Y(z),stroke:"var(--rule)","stroke-width":1},prof);
+    const t=el("text",{x:pad.l-6,y:Y(z)+4,"text-anchor":"end","font-size":11,fill:"var(--muted)",class:"num"},prof);t.textContent=z.toLocaleString();}
+  for(let m=0;m<=xmax;m++){const t=el("text",{x:X(m),y:PH-8,"text-anchor":"middle","font-size":11,fill:"var(--muted)",class:"num"},prof);t.textContent=m+(m===xmax?" mi":"");}
+  const lt=el("text",{x:pad.l+4,y:pad.t+10,"text-anchor":"start","font-size":10,fill:"var(--muted)"},prof); lt.textContent="ft";
+  el("path",{d:area,fill:col(state.opt),opacity:.14},prof);
+  el("path",{d:line,fill:"none",stroke:col(state.opt),"stroke-width":2.4,"stroke-linejoin":"round"},prof);
+  el("line",{x1:pad.l,x2:PW-pad.r,y1:Y(962),y2:Y(962),stroke:"var(--water-edge)","stroke-dasharray":"3 3"},prof);
+  const wl=el("text",{x:PW-pad.r-4,y:Y(962)-4,"text-anchor":"end","font-size":10,fill:"var(--water-edge)"},prof); wl.textContent="lake level 962 ft";
+  const vl=el("line",{y1:pad.t,y2:PH-pad.b,stroke:"var(--ink)","stroke-width":1,visibility:"hidden"},prof);
+  const dot=el("circle",{r:4.5,fill:col(state.opt),stroke:"var(--sheet)","stroke-width":2,visibility:"hidden"},prof);
+  const tip=el("text",{"font-size":12,fill:"var(--ink)",class:"num",visibility:"hidden",stroke:"var(--sheet)","stroke-width":3,"paint-order":"stroke"},prof);
+  const hit=el("rect",{x:pad.l,y:0,width:PW-pad.l-pad.r,height:PH,fill:"transparent",style:"cursor:crosshair"},prof);
+  const move=ev=>{const pt=prof.createSVGPoint(); const e=ev.touches?ev.touches[0]:ev; pt.x=e.clientX; pt.y=e.clientY;
+    const p=pt.matrixTransform(prof.getScreenCTM().inverse()); const m=Math.max(0,Math.min(r.mi,(p.x-pad.l)/(PW-pad.l-pad.r)*xmax));
+    let i=0; while(i<r.prof.length-1&&r.prof[i][0]<m)i++; const q=r.prof[i];
+    vl.setAttribute("x1",X(q[0]));vl.setAttribute("x2",X(q[0]));dot.setAttribute("cx",X(q[0]));dot.setAttribute("cy",Y(q[1]));
+    tip.setAttribute("x",Math.min(X(q[0])+8,PW-150));tip.setAttribute("y",Math.max(Y(q[1])-10,24));tip.textContent=`${q[0].toFixed(1)} mi · ${Math.round(q[1]).toLocaleString()} ft`;
+    [vl,dot,tip,cursor].forEach(n=>n.setAttribute("visibility","visible"));
+    cursor.setAttribute("cx",r.xy[i][0]);cursor.setAttribute("cy",r.xy[i][1]);cursor.setAttribute("stroke",css(`--o${state.opt}`));
+    if(ev.touches) ev.preventDefault();};
+  const leave=()=>[vl,dot,tip,cursor].forEach(n=>n.setAttribute("visibility","hidden"));
+  hit.addEventListener("mousemove",move);hit.addEventListener("touchmove",move,{passive:false});hit.addEventListener("touchstart",move,{passive:false});
+  hit.addEventListener("mouseleave",leave);
+}
+
+/* ---------- card ---------- */
+const card=document.getElementById("card");
+function fmtH(h){const H=Math.floor(h),M=Math.round((h-H)*60/5)*5;return `${H}h ${String(M===60?0:M).padStart(2,"0")}m`;}
+function drawCard(){
+  const r=D.routes[rid()]; const o=OPTS[state.opt-1];
+  card.style.setProperty("--cur",col(state.opt));
+  card.innerHTML=`<div><div class="lbl">${o.name} · ${r.day}</div><h2>${r.title}</h2></div>
+  <div class="stats">
+   <div class="stat"><b>${r.mi.toFixed(1)}</b><span>miles</span></div>
+   <div class="stat"><b>${r.gain.toLocaleString()}</b><span>ft of climbing</span></div>
+   <div class="stat"><b>${fmtH(r.hrs_move)}</b><span>moving time</span></div>
+   <div class="stat"><b>${fmtH(r.hrs)}</b><span>with stops</span></div>
+  </div>
+  <div class="push"><div class="lbl">What it pushes</div>${r.push}</div>
+  <ol>${r.notes.map(n=>`<li>${n}</li>`).join("")}</ol>
+  <div class="flag">Range ${r.zmin.toLocaleString()}–${r.zmax.toLocaleString()} ft.${r.approx_pct?` ${r.approx_pct}% of this route follows approximate trail lines.`:" All on trail lines placed against the terrain."}</div>`;
+}
+
+/* ---------- comparison grid ---------- */
+const grid=document.getElementById("grid");
+function drawGrid(){
+  grid.innerHTML=`<div></div>`+DAYS.map(d=>`<div class="hd">${d.name}</div>`).join("");
+  OPTS.forEach(o=>{
+    const rl=document.createElement("div"); rl.className="rowlbl"; rl.innerHTML=`<span><span class="sw" style="background:${col(o.id)}"></span> ${o.name}</span><small>${o.sub}</small>`; grid.appendChild(rl);
+    DAYS.forEach(d=>{
+      const r=D.routes[`o${o.id}d${d.id}`]; const b=document.createElement("button"); b.className="cell";
+      b.setAttribute("aria-pressed",String(state.opt===o.id&&state.day===d.id)); b.style.setProperty("--cur",col(o.id));
+      b.setAttribute("aria-label",`${o.name}, ${d.name}: ${r.mi} miles, ${r.gain} feet of climbing`);
+      const w=300,h=74,p={l:4,r:4,t:4,b:4}; const {line,area}=profPath(r,w,h,p,maxMi);
+      b.innerHTML=`<svg viewBox="0 0 ${w} ${h}" aria-hidden="true"><rect x="${p.l}" y="${p.t}" width="${w-p.l-p.r}" height="${h-p.t-p.b}" fill="none" stroke="var(--rule)" stroke-dasharray="2 3"/><path d="${area}" fill="${col(o.id)}" opacity=".16"/><path d="${line}" fill="none" stroke="${col(o.id)}" stroke-width="1.8"/></svg>
+      <div class="nums"><b>${r.mi.toFixed(1)}</b> mi · <b>${r.gain.toLocaleString()}</b> ft · <b>${fmtH(r.hrs)}</b></div>`;
+      b.onclick=()=>select(o.id,d.id); grid.appendChild(b);
+    });
+  });
+}
+
+/* ---------- daylight ---------- */
+const day=document.getElementById("day");
+function drawDay(){
+  const W=1000,rowH=26,top=26,H=top+rowH*6+22; day.setAttribute("viewBox",`0 0 ${W} ${H}`); day.innerHTML="";
+  const l=150,r=12, t0=6, t1=19.5; const X=h=>l+(h-t0)/(t1-t0)*(W-l-r);
+  el("rect",{x:X(t0),y:top-6,width:X(7.3)-X(t0),height:rowH*6+6,fill:"var(--night)",opacity:.18},day);
+  el("rect",{x:X(18.08),y:top-6,width:X(t1)-X(18.08),height:rowH*6+6,fill:"var(--night)",opacity:.18},day);
+  for(let h=6;h<=19;h++){const x=X(h); el("line",{x1:x,x2:x,y1:top-6,y2:top+rowH*6,stroke:"var(--rule)"},day);
+    const t=el("text",{x,y:top-10,"text-anchor":"middle","font-size":11,fill:"var(--muted)",class:"num"},day); t.textContent=(h>12?h-12:h)+(h<12?"a":"p");}
+  let i=0;
+  DAYS.forEach(d=>OPTS.forEach(o=>{
+    const r=D.routes[`o${o.id}d${d.id}`]; const y=top+i*rowH;
+    const start=d.id===1?10.0:8.0; // Mon: ~3 h drive from Chicago; Tue: on site
+    const lb=el("text",{x:l-8,y:y+rowH/2+4,"text-anchor":"end","font-size":12,fill:"var(--ink)","font-weight":state.opt===o.id&&state.day===d.id?700:400},day); lb.textContent=`${d.name.slice(0,3)} · ${o.name}`;
+    el("rect",{x:X(start),y:y+5,width:X(start+r.hrs)-X(start),height:rowH-10,rx:3,fill:col(o.id),opacity:.28},day);
+    el("rect",{x:X(start),y:y+5,width:X(start+r.hrs_move)-X(start),height:rowH-10,rx:3,fill:col(o.id)},day);
+    const end=start+r.hrs; const hh=Math.floor(end), mm=Math.round((end-hh)*60);
+    const et=el("text",{x:X(end)+6,y:y+rowH/2+4,"font-size":11.5,fill:"var(--muted)",class:"num"},day); et.textContent=`done ~${hh>12?hh-12:hh}:${String(mm%60).padStart(2,"0")}${hh>=12?"p":"a"}`;
+    i++;}));
+  const n=el("text",{x:l,y:H-4,"font-size":11,fill:"var(--muted)"},day);
+  n.textContent="Solid = moving time, faded = with stops. Monday assumes a 10 am start after the drive; Tuesday an 8 am start. Shaded = before sunrise / after sunset.";
+}
+
+/* ---------- selectors ---------- */
+const optSeg=document.getElementById("optSeg"), daySeg=document.getElementById("daySeg");
+OPTS.forEach(o=>{const b=document.createElement("button");b.innerHTML=`<span class="sw" style="background:${col(o.id)}"></span>${o.name}`;b.onclick=()=>select(o.id,state.day);b.dataset.o=o.id;optSeg.appendChild(b);});
+DAYS.forEach(d=>{const b=document.createElement("button");b.textContent=d.name;b.onclick=()=>select(state.opt,d.id);b.dataset.d=d.id;daySeg.appendChild(b);});
+function select(o,d){state={opt:o,day:d};try{localStorage.setItem("dl-route",JSON.stringify(state));}catch(e){} render();}
+function render(){
+  const r=D.routes[rid()];
+  document.documentElement.style.setProperty("--cur",col(state.opt));
+  optSeg.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.o===state.opt)));
+  daySeg.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.d===state.day)));
+  halo.setAttribute("d",r.d); route.setAttribute("d",r.d); route.setAttribute("stroke",col(state.opt));
+  drawArrows(); drawCard(); drawProfile(); drawGrid(); drawDay();
+}
+render();
+</script>
