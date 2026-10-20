@@ -51,6 +51,13 @@ Confidence labels: **HIGH** = stated and accepted by Aaron · **MED** = he desig
   - Envelope unchanged until the evening and next-morning logs arrive (FR-HIK-007).
   - Details: `runs/2026-09-30-indiana-dunes-push.md`.
 
+- **2026-10-19, Devil's Lake SP (provisional; follow-ups pending):**
+  - 11.04 mi, 6 h 17 m elapsed (5+ h hiking, uninterrupted).
+  - ~1,300–1,600 ft estimated climbing: West Bluff, an East Bluff south-face climb, and an East Bluff north out-and-back.
+  - Avg HR 108, mostly Zone 2.
+  - Aaron reports a **self-regulation breakthrough**: discriminating tissue-specific tenderness and weakness by location and intensity, and correcting with micro-adjustments of gait, posture, and muscle recruitment, with little to no pain.
+  - New longest distance and duration. Details: `runs/2026-10-19-devils-lake-day1-outcome.md`.
+
 ### 3.2 Envelopes
 - **Routine (provisional):** ~4 active hours, ~800 ft reported gain, moderately hilly maintained trail, minimal next-day recovery. Distance, pack weight, footing, and what "elevation" measures are UNKNOWN.
 - **Physical state:** Normal by default. Scoped constraint: **repetitive or sustained uphill left-hip flexion** is the challenging dimension. Show this as a scoped modification, never label Aaron "injured". Past health information alone never creates a restriction.
