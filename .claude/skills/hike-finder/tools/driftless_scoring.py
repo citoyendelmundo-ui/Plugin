@@ -29,11 +29,12 @@ C=[
 ]
 CAL=[("Devil's Lake bluffs (your rating 5)",dict(V=4.5,T=5,P=5,R=4.5,W=4,O=3.5,H=3),0),("Sauk Point → Parfrey's Glen (your rating 2.5)",dict(V=1,T=2,P=1,R=3.5,W=1.5,O=1.5,H=1),0)]
 def sc(s,v): return round(sum(W[k]*s[k] for k in W)-v,2)
-for n,s,v in CAL: print(n,sc(s,v))
-rows=[]
-for c in C:
-    s=sc(c[7],c[8]); t=1 if s>=4.0 else 2 if s>=3.3 else 3
-    rows.append(dict(name=c[0],route=c[1],region=c[2],base=c[3],drive=c[4],mi=c[5],gain=c[6],s=c[7],veto=c[8],score=s,tier=t,ready=c[9],flags=c[10]))
-rows.sort(key=lambda r:-r['score'])
-for i,r in enumerate(rows,1): print(i,r['tier'],r['score'],r['name'],r['drive'])
-json.dump(rows,open('/tmp/claude-0/-home-user-Plugin/f96f31c2-624c-53ad-a7e9-b2235cc8484d/scratchpad/driftless.json','w'))
+if __name__=='__main__':
+    for n,s,v in CAL: print(n,sc(s,v))
+    rows=[]
+    for c in C:
+        s=sc(c[7],c[8]); t=1 if s>=4.0 else 2 if s>=3.3 else 3
+        rows.append(dict(name=c[0],route=c[1],region=c[2],base=c[3],drive=c[4],mi=c[5],gain=c[6],s=c[7],veto=c[8],score=s,tier=t,ready=c[9],flags=c[10]))
+    rows.sort(key=lambda r:-r['score'])
+    for i,r in enumerate(rows,1): print(i,r['tier'],r['score'],r['name'],r['drive'])
+    json.dump(rows,open('/tmp/claude-0/-home-user-Plugin/f96f31c2-624c-53ad-a7e9-b2235cc8484d/scratchpad/driftless.json','w'))
