@@ -72,8 +72,7 @@ Confidence labels: **HIGH** = stated and accepted by Aaron · **MED** = he desig
 - **USR-HIK-023, in-activity somatic self-regulation**, is registered as its own capability dimension, distinct from tissue tolerance. Trigger → response specificity will be captured prospectively.
 
 ### 3.2 Envelopes
-- **Proposed revision (awaiting Aaron's approval, spec insert 8.3.2):** routine ≈ 5–6 active hours / ≈ 1,200 ft on maintained or rocky trail; back-to-back days demonstrated (Day 2 still gated by the morning check).
-- **Routine (provisional):** ~4 active hours, ~800 ft reported gain, moderately hilly maintained trail, minimal next-day recovery. Distance, pack weight, footing, and what "elevation" measures are UNKNOWN.
+- **Routine (accepted 2026-10-21, USR-HIK-002 rev. 1, spec insert 8.3.2):** **~6 active hours, ~1,200 ft gain**, on maintained or dry rocky trail, with minimal next-day recovery. Back-to-back days are demonstrated; Day 2 is still gated by the morning check. *Supersedes ~4 h / ~800 ft.* Pack weight and what "elevation" measures remain UNKNOWN. Distance, pack weight, footing, and what "elevation" measures are UNKNOWN.
 - **Physical state:** Normal by default. Scoped constraint: **repetitive or sustained uphill left-hip flexion** is the challenging dimension. Show this as a scoped modification, never label Aaron "injured". Past health information alone never creates a restriction.
 - **Rehab goal:** Aaron wants controlled hiking variation to learn his limits and train hip and core toward full strength and range of motion. **Controlled progression is a positive value**, not just a tolerated risk.
 
