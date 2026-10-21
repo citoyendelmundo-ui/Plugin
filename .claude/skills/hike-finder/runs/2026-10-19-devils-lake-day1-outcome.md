@@ -6,7 +6,7 @@ Source: Oura "Outdoor walking" record (two screenshots) + Aaron's first narrativ
 | Field | Value | Notes |
 |---|---|---|
 | Start | 10:52 am | North Shore |
-| Duration | 6 h 17 m (ended ~7:09 pm) | Elapsed, incl. stops. Aaron: "hiked for over 5 hours" without interrupting. **Finish was ~1 h after sunset (~6:05 pm)** |
+| Duration | 6 h 17 m (ended ≈ 5:09 pm; *corrected 2026-10-21 from "~7:09 pm"*) | Elapsed, incl. stops. Aaron: "hiked for over 5 hours" without interrupting. Finish was **before** sunset (~6:05 pm). The Oura chart axis runs to ≈ 5:49 pm. |
 | Distance | 11.04 mi | **New longest demonstrated** (prior: 10 mi Patapsco, flat) |
 | Avg pace | 34:10 /mi | Elapsed basis |
 | Steps | 23,679 | |
@@ -51,3 +51,10 @@ Source: Oura "Outdoor walking" record (two screenshots) + Aaron's first narrativ
 - [ ] The descent after dark: headlamp used? Which trail?
 - [ ] Taste ratings: enjoyment, views, water, flow, exertion, veto exposure, repeat desire.
 - [ ] Detailed self-regulation account (next installments).
+
+## Registration (2026-10-21)
+- Aaron accepted this outing and the 10-20 Day 2 as demonstrated capability evidence before every follow-up was complete.
+- See OOIS spec insert 8.3.2 and Drive › OOIS — Hiking Outing Evidence (OUT-HIK-2026-10-19, BLK-HIK-2026-10-19→20 v3).
+- Wed 10-21 15:15: no added pain or soreness; hip and thigh better than before Monday.
+- Thu and Fri 08:00 rating reminders are on the calendar.
+- The darkness/headlamp follow-up is moot after the end-time correction.
