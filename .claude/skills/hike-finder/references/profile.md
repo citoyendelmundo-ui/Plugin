@@ -127,6 +127,9 @@ Calibration session 1: 2026-09-25, forced-choice plus multi-select, answered by 
 | USR-HIK-TASTE-013 | **History and culture add value situationally.** A supporting factor, not a driver. | MED | Stated 2026-09-25 | +½ tier when the historic or cultural feature is integrated into the route and legible (CCC stonework, Indigenous mounds, lighthouse, preserved homestead). No penalty when absent. |
 | USR-HIK-TASTE-014 | **Inclined to stay overnight near a great hike**, and weekdays are available. | HIGH | Stated 2026-09-25 | For Strong+ opportunities more than ~2 h away, surface an overnight variant: a two-day pairing, sunrise/sunset views, weekday timing to dodge crowds. Show that lodging exists but don't source it in detail (spec v0.1 scope). The 3 h / 4 h travel caps are unchanged; going farther still needs explicit expansion. Day 2 of any pairing is gated on a next-morning symptom check, because back-to-back days of load are Untested. |
 
+| USR-HIK-TASTE-016 | **Rock and geology are a driver:** outcrops, cliffs, bluff structure, gorges, karst features (caves, sinkholes, springs), natural bridges and arches. | HIGH | Stated 2026-10-21 after Devil's Lake / Parfrey's Glen | Score rock and geologic interest as a separate driver (+½ to +1), not folded into views. |
+| USR-HIK-TASTE-017 | **Variety of terrain within one hike:** e.g. ridge → gorge → shoreline → meadow, rather than one uniform setting. | HIGH | Stated 2026-10-21 | Reward the count of distinct terrain types along the route (+½ to +1). Not the same thing as novelty, which stays weak. |
+
 ### 4.1a Light-rain filter (condition-sensitive; added 2026-09-30)
 Aaron asked for hikes that are **viable and fun in light rain**. Score rain suitability per route as a condition overlay. It never replaces readiness.
 
