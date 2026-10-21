@@ -52,15 +52,27 @@ Confidence labels: **HIGH** = stated and accepted by Aaron · **MED** = he desig
   - Envelope unchanged until the evening and next-morning logs arrive (FR-HIK-007).
   - Details: `runs/2026-09-30-indiana-dunes-push.md`.
 
-- **2026-10-19, Devil's Lake SP (provisional; follow-ups pending):**
+- **2026-10-19, Devil's Lake SP. REGISTERED as demonstrated capacity (Aaron's decision 2026-10-21; OOIS spec insert 8.3.2):**
   - 11.04 mi, 6 h 17 m elapsed (5+ h hiking, uninterrupted).
   - ~1,300–1,600 ft estimated climbing: West Bluff, an East Bluff south-face climb, and an East Bluff north out-and-back.
   - Avg HR 108, mostly Zone 2.
   - Aaron reports a **self-regulation breakthrough**: discriminating tissue-specific tenderness and weakness by location and intensity, and correcting with micro-adjustments of gait, posture, and muscle recruitment, with little to no pain.
   - New longest distance and duration. Details: `runs/2026-10-19-devils-lake-day1-outcome.md`.
+- **2026-10-20, back-to-back Day 2. REGISTERED (same decision):**
+  - Madison urban walk: 6.19 mi, 1 h 32 m.
+  - Then Sauk Point → Parfrey's Glen: 9.65 mi, 3 h 27 m, avg HR 109 / peak 148, gain Unknown, rocky gorge footing at the end.
+  - Day 2 total: ≈ 15.8 mi / ≈ 5 h, with near-zero hip and thigh pain.
+  - Wed 10-21 15:15: no added pain or soreness; hip and thigh better than before Monday.
+- **Block total:** ≈ 26.9 mi, ≈ 11 h 16 m.
+- **Recorded deviations:**
+  - Mon evening and Tue morning checks never logged. Thu and Fri checks still due and can annotate.
+  - Dimensions stacked, so the evidence covers the bundle.
+  - Gain estimated, not measured.
+- **Outing records (Drive › OOIS — Hiking Outing Evidence):** OUT-HIK-2026-10-19, OUT-HIK-2026-10-20, BLK-HIK-2026-10-19→20 v3.
+- **USR-HIK-023, in-activity somatic self-regulation**, is registered as its own capability dimension, distinct from tissue tolerance. Trigger → response specificity will be captured prospectively.
 
 ### 3.2 Envelopes
-- **Routine (provisional):** ~4 active hours, ~800 ft reported gain, moderately hilly maintained trail, minimal next-day recovery. Distance, pack weight, footing, and what "elevation" measures are UNKNOWN.
+- **Routine (accepted 2026-10-21, USR-HIK-002 rev. 1, spec insert 8.3.2):** **~6 active hours, ~1,200 ft gain**, on maintained or dry rocky trail, with minimal next-day recovery. Back-to-back days are demonstrated; Day 2 is still gated by the morning check. *Supersedes ~4 h / ~800 ft.* Pack weight and what "elevation" measures remain UNKNOWN. Distance, pack weight, footing, and what "elevation" measures are UNKNOWN.
 - **Physical state:** Normal by default. Scoped constraint: **repetitive or sustained uphill left-hip flexion** is the challenging dimension. Show this as a scoped modification, never label Aaron "injured". Past health information alone never creates a restriction.
 - **Rehab goal:** Aaron wants controlled hiking variation to learn his limits and train hip and core toward full strength and range of motion. **Controlled progression is a positive value**, not just a tolerated risk.
 
@@ -69,9 +81,9 @@ Confidence labels: **HIGH** = stated and accepted by Aaron · **MED** = he desig
 | Route characteristic | Evidence | Use band | Companion |
 |---|---|---|---|
 | Maintained flat/rolling trail | Demonstrated | **Routine** | Optional |
-| Roots, rocks, continuous uneven footing | Untested | Controlled progression | Optional |
-| Sustained steep ascent | Untested at dose | Controlled progression; **poles Recommended** (left-hip flexion) | Optional* |
-| Sustained/technical descent | Untested | Controlled progression | Optional* |
+| Roots, rocks, continuous uneven footing | **Demonstrated** 2026-10-19/20 (talus, rock stairs, gorge) | Routine within demonstrated dose | Optional |
+| Sustained steep ascent | **Demonstrated** ≈ 1,300–1,600 ft/day est., climbs of ≈ 350–500 ft (2026-10-19) | Routine for single climbs ≤ ≈ 500 ft; Controlled progression above the demonstrated daily dose; poles Recommended | Optional* |
+| Sustained/technical descent | **Demonstrated** (dry quartzite rock stairs, 2026-10-19) | Routine within demonstrated dose; wet rock stays Controlled progression | Optional* |
 | Dunes / loose sand | Untested | Controlled progression | Optional |
 | Mud, shallow crossings, wet footing | Untested | Controlled progression; conditions highly material | Optional* |
 | Hands-required scrambling (no major exposure) | Untested | Controlled progression | **Recommended** initially |
